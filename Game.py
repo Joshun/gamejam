@@ -2,7 +2,9 @@ import sys
 import pygame as pg
 from Entities.Player import Player
 from Entities.FireElemental import FireElemental
-from Entities.Weapon import Weapon
+from Entities.Weapons.RangedWeapon import RangedWeapon
+from Entities.Weapons.MeleeWeapon import MeleeWeapon
+from Entities.Weapons.Firebolt import Firebolt
 from SceneIntro import SceneIntro
 from HudOverlay import HudOverlay
 from RoomCollection import *
@@ -23,8 +25,7 @@ class Game(object):
         self.level_rect = self.level.get_rect()
         self.player = Player((40, 40), 100)
         self.delta_time = 0
-
-        self.enemy = FireElemental((100, 100), 1, 10, Weapon(32))
+        self.enemy = FireElemental((100, 100), 1, 10, Firebolt())
 
         # self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
         self.overlay = HudOverlay(self.player)
