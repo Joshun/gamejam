@@ -1,0 +1,9 @@
+{
+    "sample_room": {
+        "room_name": "name",
+        "description": "",
+        "tile_map": "path/to/file"
+    }
+
+    
+}
