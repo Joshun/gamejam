@@ -18,7 +18,7 @@ class RoomCollection(object):
                 room_tilemap = json_data[room_id]["tile_map"]
 
                 room_tilemap_data = TilesetLoader(room_tilemap)
-                new_room = Room(room_tilemap_data)
+                new_room = Room(room_tilemap_data, room_name, room_description)
                 self.__rooms[room_id] = new_room
 
         # getting the start room
@@ -37,8 +37,8 @@ class RoomCollection(object):
     def draw_current(self, screen):
         self.__current_room.draw(screen)
 
-    def update_current(self, screen, player):
-        self.__current_room.update(screen, player)
+    def update_current(self, screen, player, keys):
+        self.__current_room.update(screen, player, keys)
 
     def get_current(self):
         return self.__current_room
