@@ -18,11 +18,6 @@ class SceneIntro():
             self.display_paragraph(bg)
             screen.blit(bg, (0, 0))
 
-    def update(self, keys):
-        
-        if keys[pygame.K_SPACE]:
-            self.next()
-
     def setup_background(self, size):
         background = pygame.Surface(size,50)
         background = background.convert()

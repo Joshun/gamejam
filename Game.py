@@ -5,8 +5,7 @@ from Entities.FireElemental import FireElemental
 from Entities.Weapons.RangedWeapon import RangedWeapon
 from Entities.Weapons.MeleeWeapon import MeleeWeapon
 from Entities.Weapons.Firebolt import Firebolt
-from SceneIntro import SceneIntro
-from HudOverlay import HudOverlay
+from Overlays.Overlay import Overlay
 from RoomCollection import *
 
 
@@ -25,10 +24,10 @@ class Game(object):
         self.level_rect = self.level.get_rect()
         self.player = Player((40, 40), 100)
         self.delta_time = 0
+        self.overlay = Overlay(self.player)
+        self.overlay.update_scene_intro("Hello", ["ite"])
         self.enemy = FireElemental((100, 100), 1, 10, Firebolt())
 
-        # self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
-        self.overlay = HudOverlay(self.player)
         self.room_collection = RoomCollection("RoomDescriptions.json")
 
         entry_point = self.room_collection.get_current().get_entry_point()

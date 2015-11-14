@@ -1,12 +1,13 @@
 import pygame
 
-class HudOverlay():
+
+class HudOverlay:
     def __init__(self, player):
         self.player = player
-        self.heart_size = (50,50)
+        self.heart_size = (50, 50)
 
     def draw(self, screen):
-        background = self.setup_background((screen.get_size()[0],30))
+        background = self.setup_background((screen.get_size()[0], 30))
         self.draw_hearts(background, self.player.health // 33)
         screen.blit(background, (0,0))
 
@@ -21,7 +22,7 @@ class HudOverlay():
             offset += self.heart_size[0]+10
 
     def draw_heart(self, bg, offset):
-        background = pygame.Surface(self.heart_size,50)
+        background = pygame.Surface(self.heart_size, 50)
         background = background.convert()
         background.fill((247, 0, 190, 50))
         bg.blit(background, (offset,0))
@@ -31,7 +32,3 @@ class HudOverlay():
         background = background.convert()
         background.fill((250, 250, 250, 50))
         return background
-
-
-
-        
