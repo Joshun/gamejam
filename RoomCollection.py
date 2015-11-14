@@ -4,7 +4,7 @@ from TilesetLoader import *
 
 
 class RoomCollection(object):
-    def __init__(self, description_file):
+    def __init__(self, description_file, overlay):
         self.__rooms = {}
         self.__current_room = None
 
@@ -18,7 +18,7 @@ class RoomCollection(object):
                 room_tilemap = json_data[room_id]["tile_map"]
 
                 room_tilemap_data = TilesetLoader(room_tilemap)
-                new_room = Room(room_tilemap_data, room_name, room_description)
+                new_room = Room(room_tilemap_data, room_name, room_description, overlay)
                 self.__rooms[room_id] = new_room
 
         # getting the start room
@@ -37,8 +37,8 @@ class RoomCollection(object):
     def draw_current(self, screen):
         self.__current_room.draw(screen)
 
-    def update_current(self, screen, player, keys):
-        self.__current_room.update(screen, player, keys)
+    def update_current(self, screen, player):
+        self.__current_room.update(screen, player)
 
     def get_current(self):
         return self.__current_room

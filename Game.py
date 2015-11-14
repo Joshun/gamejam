@@ -28,7 +28,7 @@ class Game(object):
         self.overlay.update_scene_intro("Hello", ["ite"])
         self.enemy = FireElemental((100, 100), 1, 10)
 
-        self.room_collection = RoomCollection("RoomDescriptions.json")
+        self.room_collection = RoomCollection("RoomDescriptions.json", self.overlay)
         self.room_collection.get_current().set_room_collection(self.room_collection)
 
         entry_point = self.room_collection.get_current().get_entry_point()
@@ -55,7 +55,7 @@ class Game(object):
 
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
-        self.room_collection.update_current(self.screen, self.player, self.keys)
+        self.room_collection.update_current(self.screen, self.player)
 
     def draw(self):
         """
