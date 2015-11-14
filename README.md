@@ -3,7 +3,7 @@
 
 ## Build dependencies
 - python 3
-- pytmx
+- pytmx (install via pip3) [PyTMX](https://github.com/bitcraft/PyTMX)
 - pygame
 
 - Dystopian top-down isometric dungeon-crawl style
@@ -21,3 +21,7 @@
 
 ## Weapons
 
+
+##Libraries for doing useful things:
+- https://github.com/bitcraft/PyTMX for Tiled maps
+- https://github.com/bitcraft/pyscroll for sidescrolling
