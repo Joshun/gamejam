@@ -6,20 +6,22 @@ class TilesetLoader(object):
 
     def __init__(self, tileset_file):
         self.__tiled_map = pytmx.load_pygame(tileset_file, pixelalpha=True)
-        self.__tile_properties = []
+        self.__objects = []
 
-        for layer_num in range(len(self.__tiled_map.layers)):
-            for gid_property in self.__tiled_map.get_tile_properties_by_layer(layer_num):
-                self.__tile_properties.append(gid_property)
 
-        print(self.get_all_tiles_with_property("pstart"))
+        for layer in self.__tiled_map.layers:
+            if isinstance(layer, pytmx.pytmx.TiledObjectGroup):
+                for obj in layer:
+                    self.__objects.append(obj)
 
-    def get_all_tiles_with_property(self, tproperty):
-        tiles = []
-        for gid, properties in self.__tile_properties:
-            if tproperty in properties:
-                tiles.append ((gid,properties))
-        return tiles
+        print(self.get_all_objects_with_property("pstart"))
+
+    def get_all_objects_with_property(self, tproperty):
+        objects = []
+        for obj in self.__objects:
+            if tproperty in obj.properties:
+                objects.append(obj)
+        return objects
 
     def draw(self, screen):
 

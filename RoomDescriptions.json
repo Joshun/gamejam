@@ -2,6 +2,6 @@
     "start": {
         "room_name": "Your Bedroom | Ten minutes before the end of the world.",
         "description": "What's happened? An earthquake? My room's a mess.",
-        "tile_map": "TiledTest/tileset.tmx"
+        "tile_map": "Tilesets/start.tmx"
     }
 }
