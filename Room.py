@@ -4,8 +4,8 @@ class Room(object):
         self.tiled_map = tiled_map
         self.interative_objects = i_objs
 
-    def draw():
+    def draw(self, screen):
+        self.tiled_map.draw(screen)
+
+    def update(self,screen):
         pass
-    def update():
-        pass
-    
