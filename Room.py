@@ -3,9 +3,9 @@ class Room(object):
   def __init__(self, tiled_map):
     self.tiled_map = tiled_map
 
-  def draw():
+  def draw(self):
     pass
 
-  def update():
+  def update(self):
     pass
     
