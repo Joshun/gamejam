@@ -28,6 +28,10 @@ class Room(object):
             print("Setting player entry point to", entry_point.x, entry_point.y)
             return entry_point
 
+    def get_entry_point(self):
+        return self.__entry_point
+
+
     def __setup_doors(self, doors_list):
         doors = []
         for obj in doors_list:

@@ -40,4 +40,7 @@ class RoomCollection(object):
     def update_current(self, screen, player):
         self.__current_room.update(screen, player)
 
+    def get_current(self):
+        return self.__current_room
+
 

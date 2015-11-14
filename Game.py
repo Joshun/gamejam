@@ -30,6 +30,9 @@ class Game(object):
         self.overlay = HudOverlay(self.player)
         self.room_collection = RoomCollection("RoomDescriptions.json")
 
+        entry_point = self.room_collection.get_current().get_entry_point()
+        self.player.move_to(entry_point.x, entry_point.y)
+
     def update_viewport(self):
         """
         The viewport will stay centered on the player unless the player
