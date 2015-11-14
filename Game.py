@@ -1,6 +1,6 @@
-import pygame as pg
 import sys
-from Player import Player
+import pygame as pg
+from Entities.Player import Player
 
 
 class Game(object):
