@@ -4,7 +4,6 @@
 - Dystopian top-down isometric dungeon-crawl style
 - Square tiles
 - Aliens as enemies (prehistoric with advanced technology)
-- 
 
 ## Tiles
 ### Ground
