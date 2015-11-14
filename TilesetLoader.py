@@ -15,9 +15,11 @@ class TilesetLoader(object):
         print(self.get_all_tiles_with_property("pstart"))
 
     def get_all_tiles_with_property(self, tproperty):
+        tiles = []
         for gid, properties in self.__tile_properties:
             if tproperty in properties:
-                return (gid,properties)
+                tiles.append ((gid,properties))
+        return tiles
 
     def draw(self, screen):
 
