@@ -1,6 +1,9 @@
-from Door import *
-import pygame as pg
 import sys
+
+import pygame as pg
+
+from Rooms.Door import *
+
 
 class Room(object):
     """Base class for a Room"""

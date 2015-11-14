@@ -1,12 +1,7 @@
-import sys
-import pygame as pg
-from Entities.Player import Player
 from Entities.FireElemental import FireElemental
-from Entities.Weapons.RangedWeapon import RangedWeapon
-from Entities.Weapons.MeleeWeapon import MeleeWeapon
-from Entities.Weapons.Firebolt import Firebolt
+from Entities.Player import Player
 from Overlays.Overlay import Overlay
-from RoomCollection import *
+from Rooms.RoomCollection import *
 
 
 class Game(object):

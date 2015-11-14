@@ -1,6 +1,7 @@
 import json
-from Room import *
-from TilesetLoader import *
+
+from Rooms.Room import *
+from Rooms.TilesetLoader import *
 
 
 class RoomCollection(object):
