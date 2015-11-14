@@ -1,9 +1,8 @@
 {
-    "sample_room": {
+    "sample_room_id": {
         "room_name": "name",
         "description": "",
         "tile_map": "path/to/file"
     }
 
-    
 }
