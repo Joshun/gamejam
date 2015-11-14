@@ -25,3 +25,8 @@
 ##Libraries for doing useful things:
 - https://github.com/bitcraft/PyTMX for Tiled maps
 - https://github.com/bitcraft/pyscroll for sidescrolling
+
+## Tile Format
+- Orientation:
+- Tile layer format:
+- Tile render order: 
