@@ -5,7 +5,7 @@ from Entities.Character import Character
 class Player(Character):
     def __init__(self, start_pos, health):
         speed = 2
-        super().__init__(start_pos, speed, 150, health, "graphics/entities/entity16_fire.png")
+        super().__init__(start_pos, speed, 150, health, "graphics/sprites/entities/entity16_fire.png")
 
         self.frames_down = []
 

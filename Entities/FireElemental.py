@@ -9,7 +9,7 @@ class FireElemental(Enemy):
         anim_speed = 150
         weapon = Firebolt()
         super().__init__(start_pos, move_speed, anim_speed, health, weapon,
-                         "graphics/entities/entity16_fire.png")
+                         "graphics/sprites/entities/entity16_fire.png")
 
         self.frames_down = []
 

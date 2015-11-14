@@ -7,7 +7,7 @@ class Firebolt(RangedWeapon):
         self.range = 64
         self.damage = 20
         self.speed = 8
-        self.bullet_sprite = pygame.image.load("graphics/entities/entity16_fireball.png").convert()
+        self.bullet_sprite = pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert()
         super().__init__(self.range, self.damage, self.speed)
 
     def shoot(self, direction, sprite, damage, range):
