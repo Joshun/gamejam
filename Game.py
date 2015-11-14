@@ -1,5 +1,6 @@
 import pygame as pg
 import sys
+from Player import Player
 
 
 class Game(object):
@@ -15,6 +16,8 @@ class Game(object):
         self.viewport = self.screen.get_rect()
         self.level = pg.Surface((1000, 1000)).convert()
         self.level_rect = self.level.get_rect()
+        self.player = Player((40, 40), 100)
+        self.delta_time = 0
 
     def update_viewport(self):
         """
@@ -32,6 +35,7 @@ class Game(object):
         """Update the player and current viewport."""
         self.keys = pg.key.get_pressed()
         self.update_viewport()
+        self.player.update(self.keys, self.delta_time)
 
     def draw(self):
         """
@@ -39,6 +43,7 @@ class Game(object):
         the viewport section of the level to the display surface.
         """
         self.level.fill(pg.Color("lightblue"))
+        self.player.draw(self.level)
         self.screen.blit(self.level, (0, 0), self.viewport)
 
     def main_loop(self):
@@ -47,7 +52,7 @@ class Game(object):
             self.update()
             self.draw()
             pg.display.update()
-            self.clock.tick(self.fps)
+            self.delta_time = self.clock.tick(self.fps)
 
 if __name__ == "__main__":
     pg.init()
