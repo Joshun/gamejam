@@ -26,7 +26,7 @@ class Game(object):
         self.delta_time = 0
         self.overlay = Overlay(self.player)
         self.overlay.update_scene_intro("Hello", ["ite"])
-        self.enemy = FireElemental((100, 100), 1, 10, Firebolt())
+        self.enemy = FireElemental((100, 100), 1, 10)
 
         self.room_collection = RoomCollection("RoomDescriptions.json")
 
