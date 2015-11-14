@@ -7,7 +7,7 @@
   <image source="../graphics/sprites/tiles/tile16_blank.png" width="34" height="36"/>
  </tileset>
  <tileset firstgid="6" name="item16_wardrobe" tilewidth="16" tileheight="16" tilecount="2">
-  <image source="../graphics/objects/furniture/item16_wardrobe.png" width="39" height="30"/>
+  <image source="../graphics/objects/furniture/wardrobe_normal.png" width="39" height="30"/>
   <tile id="0">
    <properties>
     <property name="next_room" value="room2"/>
