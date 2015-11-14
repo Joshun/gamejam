@@ -19,6 +19,7 @@ class SceneIntro():
             screen.blit(bg, (0, 0))
 
     def update(self, keys):
+        
         if keys[pygame.K_SPACE]:
             self.next()
 

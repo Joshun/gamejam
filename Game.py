@@ -4,6 +4,7 @@ from Entities.Player import Player
 from Entities.FireElemental import FireElemental
 from Entities.Weapon import Weapon
 from SceneIntro import SceneIntro
+from HudOverlay import HudOverlay
 from RoomCollection import *
 
 
@@ -25,7 +26,8 @@ class Game(object):
 
         self.enemy = FireElemental((100, 100), 1, 10, Weapon(16))
 
-        self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
+        # self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
+        self.overlay = HudOverlay(self.player)
         self.room_collection = RoomCollection("RoomDescriptions.json")
 
     def update_viewport(self):
