@@ -37,8 +37,6 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         pass
 
     def is_colliding(self, rect):
-        return
-
         pos_x, pos_y = self.get_centre()
         if pos_x - 8 <= rect.x <= pos_x + 8:
             if pos_y - 8 <= rect.y <= pos_y + 8:
