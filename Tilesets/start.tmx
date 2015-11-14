@@ -4,7 +4,7 @@
   <image source="../graphics/objects/tiles/tile16_pavement_b.png" width="20" height="22"/>
  </tileset>
  <tileset firstgid="2" name="markers" tilewidth="16" tileheight="16" tilecount="4">
-  <image source="../graphics/sprites/tiles/tile16_blank.pngtile16_blank.png" width="34" height="36"/>
+  <image source="../graphics/sprites/tiles/tile16_blank.png" width="34" height="36"/>
  </tileset>
  <tileset firstgid="6" name="item16_wardrobe" tilewidth="16" tileheight="16" tilecount="2">
   <image source="../graphics/objects/furniture/item16_wardrobe.png" width="39" height="30"/>
