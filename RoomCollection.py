@@ -1,4 +1,7 @@
 import json
+from Room import *
+from TilesetLoader import *
+
 
 class RoomCollection(object):
     def __init__(self, description_file):
@@ -12,6 +15,13 @@ class RoomCollection(object):
                 room_name = json_data[room_id]["room_name"]
                 room_description = json_data[room_id]["description"]
                 room_tilemap = json_data[room_id]["tile_map"]
+
+                room_tilemap_data = TilesetLoader(room_tilemap)
+                new_room = Room(room_tilemap_data)
+                self.__rooms[room_id] = new_room
+
+    def get_rooms_dict(self):
+        return self.__rooms
 
 
 RoomCollection("RoomDescriptions.json")
