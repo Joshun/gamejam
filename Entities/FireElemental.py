@@ -3,9 +3,10 @@ from Entities.Enemy import Enemy
 
 
 class FireElemental(Enemy):
-    def __init__(self, start_pos, move_speed, health):
+    def __init__(self, start_pos, move_speed, health, weapon):
         anim_speed = 150
-        super().__init__(start_pos, move_speed, anim_speed, health, "graphics/entities/entity16_fire.png")
+        super().__init__(start_pos, move_speed, anim_speed, health, weapon,
+                         "graphics/entities/entity16_fire.png")
 
         self.frames_down = []
 
@@ -24,8 +25,25 @@ class FireElemental(Enemy):
             x = i*(x_offset + self.rect.w)
             self.frames_down.append(self.sprite_sheet.get_image(x, y_offset, self.rect.w, self.rect.h))
 
-    def update(self, delta):
+    def update_pos(self, player):
+        x_diff = self.rect.x - (player.rect.x + self.weapon.range)
+        y_diff = self.rect.y - (player.rect.y + self.weapon.range)
+
+        scale = 1
+        if x_diff > y_diff:
+            if x_diff > 0:
+                scale = -1
+
+            self.rect.x += self.speed * scale
+        else:
+            if y_diff > 0:
+                scale = -1
+
+            self.rect.y += self.speed * scale
+
+    def update(self, delta, player):
         self.time_elapsed += delta
+        self.update_pos(player)
 
         if self.time_elapsed > self.anim_speed:
             self.time_elapsed = 0

@@ -2,6 +2,7 @@ import sys
 import pygame as pg
 from Entities.Player import Player
 from Entities.FireElemental import FireElemental
+from Entities.Weapon import Weapon
 from SceneIntro import SceneIntro
 
 
@@ -21,7 +22,7 @@ class Game(object):
         self.player = Player((40, 40), 100)
         self.delta_time = 0
 
-        self.enemy = FireElemental((100, 100), 1, 10)
+        self.enemy = FireElemental((100, 100), 1, 10, Weapon(16))
 
         self.overlay = SceneIntro("Sheffield", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!")
 
@@ -30,6 +31,7 @@ class Game(object):
         The viewport will stay centered on the player unless the player
         approaches the edge of the map.
         """
+        self.viewport.center = self.player.rect.center
         self.viewport.clamp_ip(self.level_rect)
 
     def event_loop(self):
@@ -42,7 +44,7 @@ class Game(object):
         self.keys = pg.key.get_pressed()
         self.update_viewport()
         self.player.update(self.keys, self.delta_time)
-        self.enemy.update(self.delta_time)
+        self.enemy.update(self.delta_time, self.player)
         self.overlay.update()
 
     def draw(self):
