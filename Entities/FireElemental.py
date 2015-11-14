@@ -1,11 +1,13 @@
 import pygame
 from Entities.Enemy import Enemy
+from Entities.Weapons.Firebolt import Firebolt
 import math
 
 
 class FireElemental(Enemy):
-    def __init__(self, start_pos, move_speed, health, weapon):
+    def __init__(self, start_pos, move_speed, health):
         anim_speed = 150
+        weapon = Firebolt()
         super().__init__(start_pos, move_speed, anim_speed, health, weapon,
                          "graphics/entities/entity16_fire.png")
 
