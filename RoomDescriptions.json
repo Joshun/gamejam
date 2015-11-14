@@ -1,7 +1,13 @@
 {
+    "sample_room_id": {
+        "room_name": "name",
+        "description": "",
+        "tile_map": "path/to/file"
+    },
+    
     "start": {
-        "room_name": "Room Name",
-        "description": "You are in a sample room",
+        "room_name": "Your Bedroom | Ten minutes before the end of the world.",
+        "description": "What's happened? An earthquake? My room's a mess.",
         "tile_map": "TiledTest/tileset.tmx"
     }
 }
