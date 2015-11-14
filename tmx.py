@@ -2,6 +2,7 @@ import pygame as pg
 import sys
 
 from TilesetLoader import *
+from RoomCollection import *
 
 class Game(object):
 
@@ -17,8 +18,9 @@ class Game(object):
         self.level = pg.Surface((1000, 1000)).convert()
         self.level_rect = self.level.get_rect()
 
-        # Here we are testing a tileset
-        self.tileset = TilesetLoader("TiledTest/tileset.tmx")
+        self.__room_collection = RoomCollection("RoomDescriptions.json")
+
+
 
     def update_viewport(self):
         """
@@ -46,7 +48,7 @@ class Game(object):
         # self.tileset.draw(self.level)
 
         # self.screen.blit(self.level, (0, 0), self.viewport)
-        self.tileset.draw(self.screen)
+        self.__room_collection.draw_current(self.screen)
 
     def main_loop(self):
         while not self.done:
@@ -60,6 +62,8 @@ if __name__ == "__main__":
     pg.init()
     pg.display.set_caption("Game")
     pg.display.set_mode((640, 480))
+    # Here we are testing a tileset
+    # room_collection = RoomCollection("RoomDescriptions.json")
 
     game = Game()
     game.main_loop()
