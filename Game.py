@@ -45,7 +45,7 @@ class Game(object):
         while not self.done:
             self.event_loop()
             self.update()
-            self.draw()
+            self.draw()p
             pg.display.update()
             self.clock.tick(self.fps)
 
