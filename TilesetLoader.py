@@ -23,6 +23,9 @@ class TilesetLoader(object):
                 objects.append(obj)
         return objects
 
+    def get_objects(self):
+        return self.__objects
+
     def draw(self, screen):
 
         for layer in self.__tiled_map.visible_layers:
