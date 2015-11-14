@@ -30,7 +30,7 @@ class FireElemental(Enemy):
         y_diff = self.rect.y - (player.rect.y + self.weapon.range)
 
         scale = 1
-        if x_diff > y_diff:
+        if abs(x_diff) > abs(y_diff):
             if x_diff > 0:
                 scale = -1
 
@@ -43,6 +43,7 @@ class FireElemental(Enemy):
 
     def update(self, delta, player):
         self.time_elapsed += delta
+
         self.update_pos(player)
 
         if self.time_elapsed > self.anim_speed:

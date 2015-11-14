@@ -4,6 +4,7 @@ from Entities.Player import Player
 from Entities.FireElemental import FireElemental
 from Entities.Weapon import Weapon
 from SceneIntro import SceneIntro
+from RoomCollection import *
 
 
 class Game(object):
@@ -13,7 +14,7 @@ class Game(object):
         self.screen = pg.display.get_surface()
         self.screen_rect = self.screen.get_rect()
         self.clock = pg.time.Clock()
-        self.fps = 60.0
+        self.fps = 30.0
         self.keys = pg.key.get_pressed()
         self.done = False
         self.viewport = self.screen.get_rect()
@@ -25,6 +26,7 @@ class Game(object):
         self.enemy = FireElemental((100, 100), 1, 10, Weapon(16))
 
         self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
+        self.room_collection = RoomCollection("RoomDescriptions.json")
 
     def update_viewport(self):
         """
@@ -53,11 +55,11 @@ class Game(object):
         Draw all necessary objects to the level surface, and then draw
         the viewport section of the level to the display surface.
         """
-        self.level.fill(pg.Color("lightblue"))
+        self.level.fill(pg.Color("black"))
+        self.room_collection.draw_current(self.level)
         self.player.draw(self.level)
         self.enemy.draw(self.level)
         self.screen.blit(self.level, (0, 0), self.viewport)
-
         self.overlay.draw(self.screen)
 
     def main_loop(self):

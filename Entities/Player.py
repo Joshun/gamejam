@@ -4,7 +4,7 @@ from Entities.Character import Character
 
 class Player(Character):
     def __init__(self, start_pos, health):
-        speed = 1.5
+        speed = 2
         super().__init__(start_pos, speed, 150, health, "graphics/entities/entity16_fire.png")
 
         self.frames_down = []
@@ -26,11 +26,11 @@ class Player(Character):
 
     def check_keys(self, keys):
         if keys[pygame.K_a]:
-            self.rect.x -= self.speed/2
+            self.rect.x -= self.speed
         elif keys[pygame.K_d]:
             self.rect.x += self.speed
         elif keys[pygame.K_w]:
-            self.rect.y -= self.speed/2
+            self.rect.y -= self.speed
         elif keys[pygame.K_s]:
             self.rect.y += self.speed
 
