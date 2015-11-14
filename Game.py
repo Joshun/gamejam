@@ -1,4 +1,5 @@
 import pygame as pg
+import sys
 
 
 class Game(object):
@@ -47,3 +48,14 @@ class Game(object):
             self.draw()
             pg.display.update()
             self.clock.tick(self.fps)
+
+if __name__ == "__main__":
+    pg.init()
+    pg.display.set_caption("Game")
+    pg.display.set_mode((800, 400))
+
+    game = Game()
+    game.main_loop()
+
+    pg.quit()
+    sys.exit()
