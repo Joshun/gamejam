@@ -30,6 +30,7 @@ class Game(object):
         # self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
         self.overlay = HudOverlay(self.player)
         self.room_collection = RoomCollection("RoomDescriptions.json")
+        self.room_collection.get_current().set_room_collection(self.room_collection)
 
         entry_point = self.room_collection.get_current().get_entry_point()
         self.player.move_to(entry_point.x, entry_point.y)

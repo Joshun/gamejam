@@ -35,7 +35,7 @@ class Room(object):
     def __setup_doors(self, doors_list):
         doors = []
         for obj in doors_list:
-            doors.append(Door(obj.properties["next_room"]))
+            doors.append(Door(obj.properties["next_room"], (obj.x, obj.y, obj.width, obj.height)))
         return doors
 
     def set_room_collection(self, room_collection):
