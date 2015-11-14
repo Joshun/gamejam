@@ -3,7 +3,7 @@
 
 ## Build dependencies
 - python 3
-- pytmx
+- pytmx (install via pip3) [PyTMX](https://github.com/bitcraft/PyTMX)
 - pygame
 
 - Dystopian top-down isometric dungeon-crawl style
