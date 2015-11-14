@@ -32,3 +32,11 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
 
     def is_colliding(self, rect):
         return
+
+    def hit(self, amount):
+        health = self.health - amount
+
+        if health < 0:
+            health = 0
+            
+        self.health = health
