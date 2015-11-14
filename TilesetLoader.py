@@ -24,9 +24,10 @@ class TilesetLoader(object):
     def draw(self, screen):
 
         for layer in self.__tiled_map.visible_layers:
-            for x, y, image in layer.tiles():
-                image_width = image.get_width()
-                image_height = image.get_height()
-                image_rect = pg.Rect(x*image_width, y*image_height, image_width, image_height)
+            if isinstance(layer, pytmx.pytmx.TiledTileLayer):
+                for x, y, image in layer.tiles():
+                    image_width = image.get_width()
+                    image_height = image.get_height()
+                    image_rect = pg.Rect(x*image_width, y*image_height, image_width, image_height)
 
-                screen.blit(image, image_rect)
+                    screen.blit(image, image_rect)
