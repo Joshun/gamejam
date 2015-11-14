@@ -1,4 +1,5 @@
 import pygame as pg
+from SceneIntro import SceneIntro
 import sys
 
 
@@ -15,6 +16,8 @@ class Game(object):
         self.viewport = self.screen.get_rect()
         self.level = pg.Surface((1000, 1000)).convert()
         self.level_rect = self.level.get_rect()
+
+        self.overlay = SceneIntro("Sheffield", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!")
 
     def update_viewport(self):
         """
@@ -33,6 +36,8 @@ class Game(object):
         self.keys = pg.key.get_pressed()
         self.update_viewport()
 
+        self.overlay.update()
+
     def draw(self):
         """
         Draw all necessary objects to the level surface, and then draw
@@ -40,6 +45,8 @@ class Game(object):
         """
         self.level.fill(pg.Color("lightblue"))
         self.screen.blit(self.level, (0, 0), self.viewport)
+
+        self.overlay.draw(self.screen)
 
     def main_loop(self):
         while not self.done:
