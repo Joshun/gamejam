@@ -24,7 +24,7 @@ class Game(object):
 
         self.enemy = FireElemental((100, 100), 1, 10, Weapon(16))
 
-        self.overlay = SceneIntro("Sheffield", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!")
+        self.overlay = SceneIntro("Sheffield", ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!", "Lorem ipsum dolor sit amet."])
 
     def update_viewport(self):
         """
@@ -44,8 +44,9 @@ class Game(object):
         self.keys = pg.key.get_pressed()
         self.update_viewport()
         self.player.update(self.keys, self.delta_time)
+
         self.enemy.update(self.delta_time, self.player)
-        self.overlay.update()
+        self.overlay.update(self.keys)
 
     def draw(self):
         """
