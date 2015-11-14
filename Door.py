@@ -6,9 +6,8 @@ class Door(object):
     def get_next_room(self):
         return self.__next_room
 
-    def player_action(self, coords, room_collection):
-        if coords == self.__coords:
-            room_collection.change_room(self.__next_room)
+    def player_action(self, player, room_collection):
+        pass
 
 
 

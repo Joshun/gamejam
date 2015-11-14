@@ -49,6 +49,7 @@ class Game(object):
 
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
+        self.room_collection.update_current(self.screen, self.player)
 
     def draw(self):
         """

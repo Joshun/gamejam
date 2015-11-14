@@ -37,4 +37,7 @@ class RoomCollection(object):
     def draw_current(self, screen):
         self.__current_room.draw(screen)
 
+    def update_current(self, screen, player):
+        self.__current_room.update(screen, player)
+
 

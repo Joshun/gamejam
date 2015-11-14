@@ -29,3 +29,6 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
     @abstractmethod
     def draw(self, surface):
         pass
+
+    def is_colliding(self, rect):
+        return
