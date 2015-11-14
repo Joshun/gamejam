@@ -3,5 +3,11 @@
         "room_name": "Your Bedroom | Ten minutes before the end of the world.",
         "description": "What's happened? An earthquake? My room's a mess.",
         "tile_map": "Tilesets/start.tmx"
+    },
+
+    "room2": {
+        "room_name": "Your attic",
+        "description": "A fun place to hang out",
+        "tile_map": "Tilesets/room2.tmx"
     }
 }

@@ -1,10 +1,14 @@
 from Door import *
-
+import pygame as pg
 import sys
+
+from SceneIntro import *
 
 class Room(object):
     """Base class for a Room"""
-    def __init__(self, tiled_map):
+    def __init__(self, tiled_map, name, description):
+        self.__name = name
+        self.__description = description
         self.__room_collection = []
         self.__tiled_map = tiled_map
         self.__room_collection = []
@@ -12,6 +16,9 @@ class Room(object):
         self.__character_tiles = self.__tiled_map.get_all_objects_with_property("character")
         self.__entry_point = self.__init_entry_point()
         self.__doors = self.__setup_doors(self.__tiled_map.get_all_objects_with_property("next_room"))
+
+        print("description:", self.__description, "name:", self.__name)
+        self.__scene_intro = SceneIntro(self.__name, [self.__description])
 
         # self.__doors = self.__setup_doors(self.__tiled_map.get_all_tiles_with_property("next_room"))
 
@@ -35,7 +42,7 @@ class Room(object):
     def __setup_doors(self, doors_list):
         doors = []
         for obj in doors_list:
-            doors.append(Door(obj.properties["next_room"]))
+            doors.append(Door(obj.properties["next_room"], pg.Rect(obj.x, obj.y, obj.width, obj.height)))
         return doors
 
     def set_room_collection(self, room_collection):
@@ -43,7 +50,9 @@ class Room(object):
 
     def draw(self, screen):
         self.__tiled_map.draw(screen)
+        self.__scene_intro.draw(screen)
 
-    def update(self, screen, player):
+    def update(self, screen, player, keys):
         for obj in self.__doors:
             obj.player_action(player, self.__room_collection)
+        self.__scene_intro.update(keys)

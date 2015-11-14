@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="3">
+ <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
+  <image source="../graphics/tiles/tilesheet.png" width="128" height="128"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt0yEOACAMBMGqOjT//ykvAFIEqZhJzq+5jIgs7qdqW6e+sZm+e9+uTZ8+ff3/Ow/TBwAAvFjgqAYK
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="1" x="160" y="80" width="16" height="16">
+   <properties>
+    <property name="entry_point" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
