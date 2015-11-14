@@ -1,6 +1,7 @@
-import pygame as pg
-from SceneIntro import SceneIntro
 import sys
+import pygame as pg
+from Entities.Player import Player
+from SceneIntro import SceneIntro
 
 
 class Game(object):
@@ -16,6 +17,8 @@ class Game(object):
         self.viewport = self.screen.get_rect()
         self.level = pg.Surface((1000, 1000)).convert()
         self.level_rect = self.level.get_rect()
+        self.player = Player((40, 40), 100)
+        self.delta_time = 0
 
         self.overlay = SceneIntro("Sheffield", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur!")
 
@@ -35,6 +38,7 @@ class Game(object):
         """Update the player and current viewport."""
         self.keys = pg.key.get_pressed()
         self.update_viewport()
+        self.player.update(self.keys, self.delta_time)
 
         self.overlay.update()
 
@@ -44,6 +48,7 @@ class Game(object):
         the viewport section of the level to the display surface.
         """
         self.level.fill(pg.Color("lightblue"))
+        self.player.draw(self.level)
         self.screen.blit(self.level, (0, 0), self.viewport)
 
         self.overlay.draw(self.screen)
@@ -54,7 +59,7 @@ class Game(object):
             self.update()
             self.draw()
             pg.display.update()
-            self.clock.tick(self.fps)
+            self.delta_time = self.clock.tick(self.fps)
 
 if __name__ == "__main__":
     pg.init()
