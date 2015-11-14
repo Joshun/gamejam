@@ -42,3 +42,7 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
             if pos_y - 8 <= rect.y <= pos_y + 8:
                 return True
         return False
+
+    def move_to(self, x, y):
+        self.rect.x = x
+        self.rect.y = y
