@@ -5,7 +5,7 @@
  </tileset>
  <layer name="base" width="40" height="30">
   <data encoding="base64" compression="zlib">
-   eJztzjEOACAIADGI//+zi5MTG2ja5PbLiMhiHapv/t78u63TVNP/AAAA4Ecb3aUAOQ==
+   eJztzkEKACAMxMAtgv9/sgieCoXeXCUDuSckRbMbum/8vfmXjZMr9z/8babcOL9t7n8AAAAAagvKsgB1
   </data>
  </layer>
  <objectgroup name="entry and exit points">
@@ -14,13 +14,13 @@
     <property name="next_room" value="room2"/>
    </properties>
   </object>
-  <object id="4" x="16" y="0" width="16" height="16">
+  <object id="4" x="16" y="32" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="characters">
+ <objectgroup name="characters" visible="0">
   <object id="6" x="128" y="0" width="16" height="16">
    <properties>
     <property name="character" value="enemy"/>
@@ -47,7 +47,7 @@
   </object>
  </objectgroup>
  <objectgroup name="walls">
-  <object id="22" x="0" y="48" width="176" height="16">
+  <object id="22" x="64" y="144" width="48" height="48">
    <properties>
     <property name="wall" value=""/>
    </properties>

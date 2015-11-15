@@ -61,6 +61,7 @@ class Player(Character):
             self.rect.y += self.speed
             self.images = self.frames_down
             self.update_anim()
+            self.current_direction = "down"
         else:
             self.image = self.images[0]
 

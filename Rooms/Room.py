@@ -5,6 +5,8 @@ import pygame as pg
 from Rooms.Door import *
 from Rooms.Wall import *
 
+from CONFIG import *
+
 from Loaders.CharacterLoader import *
 
 class Room(object):
@@ -76,7 +78,6 @@ class Room(object):
             character.update(delta_time, player)
 
         for wall in self.__walls:
-            # print((player.rect, wall.get_rect()))
             if wall.is_colliding(player.rect):
                 player.set_movement_blocking()
                 print("collided with ", wall)

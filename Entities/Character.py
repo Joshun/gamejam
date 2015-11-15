@@ -39,8 +39,7 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         pass
 
     def check_pos(self):
-        if self.rect.y < TOP_CAP:
-            self.rect.y = TOP_CAP
+        pass
 
     def collision_fix(self, rect):
         self.rect.x = rect.x + rect.width
