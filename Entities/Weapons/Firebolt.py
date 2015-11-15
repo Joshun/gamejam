@@ -12,7 +12,7 @@ class Firebolt(RangedWeapon):
         self.speed = 2
         self.bullet_surface = pygame.Surface((16, 16))
         self.direction = direction
-        self.bullet = Projectile(self.weapon_x, self.weapon_y, self.speed, self.direction, self.damage, pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert(), self.range)
+        self.bullet = Projectile(self.weapon_x, self.weapon_y, self.speed, self.direction, self.damage, pygame.image.load("graphics/sprites/entities/entity16_elemental.png").convert(), self.range)
         self.__elapsed_time = 0
         self.__previous_time = 0
         self.__update_time = 10
