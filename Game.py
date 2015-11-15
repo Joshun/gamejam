@@ -32,8 +32,10 @@ class Game(object):
         The viewport will stay centered on the player unless the player
         approaches the edge of the map.
         """
-        x, y = self.player.rect.center
-        self.viewport.center = (x*4, y*4)
+        current_room = self.room_collection.get_current()
+        if not current_room.is_fixed():
+            x, y = self.player.rect.center
+            self.viewport.center = (x*4, y*4)
         self.viewport.clamp_ip(self.level_rect)
 
     def event_loop(self):
