@@ -3,10 +3,10 @@
  <tileset firstgid="1" name="walls" tilewidth="16" tileheight="28" tilecount="64">
   <image source="../graphics/objects/walls/tilesheet.png" width="128" height="224"/>
  </tileset>
- <tileset firstgid="65" name="furniture" tilewidth="16" tileheight="28" tilecount="64">
+ <tileset firstgid="65" name="furniture" tilewidth="16" tileheight="28">
   <image source="../graphics/objects/furniture/tilesheet.png" width="128" height="224"/>
  </tileset>
- <tileset firstgid="129" name="floors" tilewidth="16" tileheight="16" tilecount="64">
+ <tileset firstgid="129" name="floors" tilewidth="16" tileheight="16">
   <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
  </tileset>
  <layer name="floors" width="12" height="7">
@@ -273,40 +273,41 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="entry and exits">
-  <object id="1" x="31" y="17" width="16" height="16">
+ <objectgroup name="entry and exits" width="0" height="0">
+  <object x="31" y="16" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
+    <property name="next_room" value="the_hallway"/>
    </properties>
   </object>
-  <object id="7" x="16" y="16" width="16" height="16">
+  <object x="219" y="40" width="16" height="16">
    <properties>
     <property name="next_room" value="the_hallway"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="collideables">
-  <object id="2" x="8" y="-2" width="22" height="35">
+ <objectgroup name="collideables" width="0" height="0">
+  <object x="6" y="-3" width="22" height="35">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object id="3" x="2" y="-2" width="13" height="113">
+  <object x="2" y="-2" width="13" height="113">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object id="4" x="175" y="-5" width="19" height="119">
+  <object x="175" y="-5" width="19" height="119">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object id="5" x="7" y="108" width="184" height="6">
+  <object x="8" y="104" width="186" height="7">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object id="6" x="49" y="-1" width="143" height="32">
+  <object x="49" y="-1" width="143" height="32">
    <properties>
     <property name="wall" value=""/>
    </properties>
