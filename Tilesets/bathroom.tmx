@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="7" tilewidth="16" tileheight="16" nextobjectid="12">
- <tileset firstgid="1" name="walls" tilewidth="16" tileheight="28" tilecount="64">
+<map version="1.0" orientation="orthogonal" width="12" height="7" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="walls" tilewidth="16" tileheight="28">
   <image source="../graphics/objects/walls/tilesheet.png" width="128" height="224"/>
  </tileset>
- <tileset firstgid="65" name="furniture" tilewidth="16" tileheight="28">
-  <image source="../graphics/objects/furniture/tilesheet.png" width="128" height="224"/>
- </tileset>
- <tileset firstgid="129" name="floors" tilewidth="16" tileheight="16">
+ <tileset firstgid="65" name="floors" tilewidth="16" tileheight="16">
   <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="129" name="furniture" tilewidth="16" tileheight="28">
+  <image source="../graphics/objects/furniture/tilesheet.png" width="128" height="224"/>
  </tileset>
  <layer name="floors" width="12" height="7">
   <data>
@@ -36,64 +36,64 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="131"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
+   <tile gid="71"/>
+   <tile gid="70"/>
+   <tile gid="71"/>
+   <tile gid="67"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="131"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="67"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="131"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="67"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="131"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="67"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="135"/>
-   <tile gid="131"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
-   <tile gid="133"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="71"/>
+   <tile gid="67"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
+   <tile gid="69"/>
    <tile gid="0"/>
   </data>
  </layer>
@@ -212,6 +212,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="132"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="135"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -238,6 +248,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="129"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -249,18 +260,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="129"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -273,7 +273,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="entry and exits" width="0" height="0">
+ <objectgroup name="entry and exits" width="0" height="0" visible="0">
   <object x="31" y="16" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
@@ -286,7 +286,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="collideables" width="0" height="0">
+ <objectgroup name="collideables" width="0" height="0" visible="0">
   <object x="6" y="-3" width="22" height="35">
    <properties>
     <property name="wall" value=""/>
@@ -309,15 +309,6 @@
   </object>
   <object x="49" y="-1" width="143" height="32">
    <properties>
-    <property name="wall" value=""/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="interactables">
-  <object id="11" x="32" y="48" width="80" height="48">
-   <properties>
-    <property name="description" value="Hmmmm.... bacon....."/>
-    <property name="interactable" value=""/>
     <property name="wall" value=""/>
    </properties>
   </object>

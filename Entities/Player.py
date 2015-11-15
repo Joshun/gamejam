@@ -1,14 +1,12 @@
 import pygame
 from Entities.Character import Character
-import sys
-from pygame import cdrom
 from Scale import *
 
 
 class Player(Character):
     def __init__(self, start_pos, health):
         speed = 1
-        super().__init__(start_pos, speed, 70, health, "graphics/objects/entities/entity16_player.png")
+        super().__init__(start_pos, speed, 1000, health, "graphics/objects/entities/entity16_player.png")
 
         self.frames_up = []
         self.frames_down = []
@@ -40,6 +38,7 @@ class Player(Character):
 
     def enable_sfx(self):
         self.__sfx_enabled = True
+
     def play_sfx(self, key):
         if not self.__sfx_enabled:
             return
@@ -111,12 +110,9 @@ class Player(Character):
 
         for enemy in enemies:
             if self.rect.colliderect(enemy.rect):
-                self.rect.x -= 10
-                self.rect.y -= 10
                 enemy.rect.x += 10
                 enemy.rect.y += 10
                 self.health -= enemy.weapon.damage
-
 
     def test_for_collisions(self, walls):
         north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
@@ -130,10 +126,8 @@ class Player(Character):
         for wall in walls:
             if wall.is_solid():
                 if wall.is_colliding(north_test_rect):
-                    #print("no north")
                     self.can_move["up"] = False
                 if wall.is_colliding(south_test_rect):
-                    # print("no south")
                     self.can_move["down"] = False
                 if wall.is_colliding(east_test_rect):
                     self.can_move["right"] = False
@@ -152,9 +146,6 @@ class Player(Character):
         self.check_pos()
         self.check_keys(keys)
 
-        if self.health <= 0:
-            self.die()
-
         self.time_elapsed += delta
 
     def draw(self, surface):
@@ -162,12 +153,15 @@ class Player(Character):
         bigger_img, image_rect = Scale.scale(self.image, self.rect.x, self.rect.y)
         surface.blit(bigger_img, image_rect)
 
+        if self.health <= 0:
+            self.die(surface)
+
     def is_colliding(self, rect):
         return self.rect.colliderect(rect)
 
-    def die(self):
-
-        print('U DEAD')
+    def die(self, surface):
+        # surface.blit(pygame.i)
+        pass
 
     def get_centre_rect(self):
         width = 16

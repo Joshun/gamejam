@@ -28,12 +28,6 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         self.time_elapsed = 0
         self.rect = None
 
-    def get_centre(self):
-        pos_x = self.rect.x + self.rect.w/2
-        pos_y = self.rect.y + self.rect.h/2
-
-        return pos_x, pos_y
-
     @abstractmethod
     def draw(self, surface):
         pass
@@ -59,6 +53,9 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         self.speed = -self.speed
 
     def hit(self, amount):
+        pygame.mixer.music.load("sounds/Audio Track-8.aiff")
+        pygame.mixer.music.play(0)
+
         health = self.health - amount
 
         if health < 0:
