@@ -39,7 +39,7 @@
    <tile gid="131"/>
    <tile gid="130"/>
    <tile gid="131"/>
-   <tile gid="131"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="131"/>
@@ -126,15 +126,15 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="3"/>
-   <tile gid="7"/>
-   <tile gid="7"/>
-   <tile gid="7"/>
-   <tile gid="10"/>
-   <tile gid="7"/>
+   <tile gid="14"/>
+   <tile gid="14"/>
+   <tile gid="11"/>
+   <tile gid="17"/>
+   <tile gid="14"/>
    <tile gid="8"/>
-   <tile gid="7"/>
-   <tile gid="7"/>
+   <tile gid="14"/>
    <tile gid="4"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -143,8 +143,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="2"/>
+   <tile gid="13"/>
+   <tile gid="4"/>
    <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -240,14 +240,13 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="66"/>
+   <tile gid="67"/>
    <tile gid="65"/>
    <tile gid="65"/>
    <tile gid="66"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="71"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -258,6 +257,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="69"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -268,16 +268,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="71"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="68"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="71"/>
@@ -287,10 +277,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="70"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="71"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -319,9 +309,19 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="collideables" width="10" height="10" opacity="0">
+ <objectgroup name="collideables" width="10" height="10">
   <object x="2" y="1" width="159" height="31">
    <properties>
     <property name="wall" value=""/>
@@ -359,10 +359,15 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="entry and exits" width="10" height="10" opacity="0">
+ <objectgroup name="entry and exits" width="10" height="10">
   <object x="97" y="16" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
+   </properties>
+  </object>
+  <object x="79" y="144" width="16" height="16">
+   <properties>
+    <property name="next_room" value="the_hallway"/>
    </properties>
   </object>
  </objectgroup>
