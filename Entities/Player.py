@@ -93,6 +93,27 @@ class Player(Character):
         if sound:
             self.play_sfx("walk")
 
+    # def set_movement_blocking(self):
+    #     for i in self.can_move:
+    #         self.can_move[i] = True
+    #     self.can_move[self.prev_direction] = False
+    #
+    # def unblock_movement(self):
+    #     for i in self.can_move:
+    #         self.can_move[i] = True
+    #
+    def test_for_nearby_enemies(self, enemies):
+        north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
+        south_test_rect = pygame.Rect(self.rect.x, self.rect.y + self.speed, 16, 16)
+        east_test_rect = pygame.Rect(self.rect.x + self.speed, self.rect.y, 16, 16)
+        west_test_rect = pygame.Rect(self.rect.x - self.speed, self.rect.y, 16, 16)
+
+        for enemy in enemies:
+            if self.rect.colliderect(enemy.rect):
+                enemy.rect.x += 10
+                enemy.rect.y += 10
+                self.health -= enemy.weapon.damage
+
     def test_for_collisions(self, walls):
         north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
         south_test_rect = pygame.Rect(self.rect.x, self.rect.y + self.speed, 16, 16)
