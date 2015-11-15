@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< 656b84daa067a62b24e2e995ad38d49f3951454a
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="21">
+=======
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="19">
+>>>>>>> Wall output
  <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
   <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
  </tileset>
@@ -47,7 +51,11 @@
   </object>
  </objectgroup>
  <objectgroup name="walls">
+<<<<<<< 656b84daa067a62b24e2e995ad38d49f3951454a
   <object id="18" x="48" y="96" width="64" height="48">
+=======
+  <object id="18" x="0" y="16" width="16" height="48">
+>>>>>>> Wall output
    <properties>
     <property name="wall" value=""/>
    </properties>

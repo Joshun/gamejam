@@ -53,12 +53,12 @@ class Room(object):
             doors.append(Door(obj.properties["next_room"], pg.Rect(obj.x, obj.y, obj.width, obj.height)))
         return doors
 
-    @staticmethod
-    def __setup_walls(wall_list):
+    def __setup_walls(self, wall_list):
         walls = []
         for obj in wall_list:
             wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
             walls.append(Wall(wall_rect))
+        print("Room", self.__name, "loaded", len(walls), "walls.")
         return walls
 
     def set_room_collection(self, room_collection):
