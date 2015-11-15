@@ -21,6 +21,10 @@ class Player(Character):
         self.images = self.frames_down
         self.moving = False
 
+        self.can_move = {"left": True, "right": True, "up": True, "down": True}
+        self.prev_direction = ""
+        self.current_direction = ""
+
     def load_images(self):
         x_offset = 16
         self.frames_down.clear()
@@ -36,24 +40,43 @@ class Player(Character):
             self.frames_up.append(self.sprite_sheet.get_image(3*x_offset, y, self.rect.w, self.rect.h))
 
     def check_keys(self, keys):
-        if keys[pygame.K_a]:
+        self.prev_direction = self.current_direction
+        if keys[pygame.K_a] and self.can_move["left"]:
             self.rect.x -= self.speed
             self.images = self.frames_left
             self.update_anim()
-        elif keys[pygame.K_d]:
+            self.current_direction = "left"
+        elif keys[pygame.K_d] and self.can_move["right"]:
             self.rect.x += self.speed
             self.images = self.frames_right
             self.update_anim()
-        elif keys[pygame.K_w]:
+            self.current_direction = "right"
+        elif keys[pygame.K_w] and self.can_move["up"]:
             self.rect.y -= self.speed
             self.images = self.frames_up
             self.update_anim()
-        elif keys[pygame.K_s]:
+            self.current_direction = "up"
+        elif keys[pygame.K_s] and self.can_move["down"]:
             self.rect.y += self.speed
             self.images = self.frames_down
             self.update_anim()
         else:
             self.image = self.images[0]
+
+    def set_movement_blocking(self):
+        for i in self.can_move:
+            self.can_move[i] = True
+        self.can_move[self.prev_direction] = False
+
+    def unblock_movement(self):
+        for i in self.can_move:
+            self.can_move[i] = True
+
+
+        # self.can_move["forward"] = False if self.prev_direction == "forward" else True
+        # self.can_move["backward"] = False if self.prev_direction == "backward" else True
+        # self.can_move["left"] = False if self.prev_direction == "left" else True
+        # self.can_move["right"] = False if self.prev_direction == "right" else True
 
     def update_anim(self):
         if self.time_elapsed > self.anim_speed:
