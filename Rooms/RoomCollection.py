@@ -45,5 +45,3 @@ class RoomCollection(object):
 
     def get_current(self):
         return self.__current_room
-
-

@@ -24,8 +24,6 @@ class Room(object):
 
         self.__overlay = overlay
 
-        # self.__doors = self.__setup_doors(self.__tiled_map.get_all_tiles_with_property("next_room"))
-
     def player_enter(self):
         if not self.visited:
             self.visited = True
@@ -47,7 +45,6 @@ class Room(object):
     @staticmethod
     def __setup_characters(characters_list):
         return CharacterLoader(characters_list).get_characters()
-
 
     @staticmethod
     def __setup_doors(doors_list):
@@ -76,9 +73,8 @@ class Room(object):
 
         for door in self.__doors:
             door.player_action(player, self.__room_collection)
-        print(self.__characters)
         for character in self.__characters:
-            print(character.update(delta_time, player))
-            # print("Trying to update character", obj)
+            # print(character.update(delta_time, player))
+            pass
         for wall in self.__walls:
             pass
