@@ -45,6 +45,8 @@ class Game(object):
             if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
                 self.done = True
 
+
+
     def update(self):
         """Update the player and current viewport."""
         self.keys = pg.key.get_pressed()
@@ -67,7 +69,15 @@ class Game(object):
         self.overlay.draw(self.screen)
 
     def main_loop(self):
+        t = 0
+        last_t = 0
+        t_diff = 400
         while not self.done:
+            if (t - last_t) > t_diff:
+                last_t = t
+                self.player.mixer_free()
+            t += self.delta_time
+
             self.event_loop()
             self.update()
             self.draw()

@@ -52,6 +52,7 @@ class Room(object):
         self.__player.move_to(self.__entry_point.x, self.__entry_point.y)
         if not self.visited:
             self.visited = True
+            self.__player.play_sfx("talk")
             self.__overlay.update_scene_intro(self.__name, [self.__description])
         for wall in self.__walls:
             if isinstance(wall, InteractableObject):
