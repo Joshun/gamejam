@@ -85,16 +85,17 @@ class Player(Character):
             self.can_move[key] = True
 
         for wall in walls:
-            if wall.is_colliding(north_test_rect):
-                print("no north")
-                self.can_move["up"] = False
-            if wall.is_colliding(south_test_rect):
-                print("no south")
-                self.can_move["down"] = False
-            if wall.is_colliding(east_test_rect):
-                self.can_move["right"] = False
-            if wall.is_colliding(west_test_rect):
-                self.can_move["left"] = False
+            if wall.is_solid():
+                if wall.is_colliding(north_test_rect):
+                    print("no north")
+                    self.can_move["up"] = False
+                if wall.is_colliding(south_test_rect):
+                    print("no south")
+                    self.can_move["down"] = False
+                if wall.is_colliding(east_test_rect):
+                    self.can_move["right"] = False
+                if wall.is_colliding(west_test_rect):
+                    self.can_move["left"] = False
 
     def update_anim(self):
         if self.time_elapsed > self.anim_speed:
