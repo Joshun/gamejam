@@ -1,5 +1,6 @@
 import pygame as pg
 import pytmx
+from CONFIG import *
 
 
 class TilesetLoader(object):
@@ -33,6 +34,6 @@ class TilesetLoader(object):
                 for x, y, image in layer.tiles():
                     image_width = image.get_width()
                     image_height = image.get_height()
-                    image_rect = pg.Rect(x*image_width, y*image_height, image_width, image_height)
+                    image_rect = pg.Rect(x*image_width+TOP_CAP, y*image_height+TOP_CAP, image_width, image_height)
 
                     screen.blit(image, image_rect)

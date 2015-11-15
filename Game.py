@@ -1,8 +1,9 @@
-from Entities.FireElemental import FireElemental
 from Entities.Player import Player
 from Overlays.Overlay import Overlay
 from Rooms.RoomCollection import *
 from Entities.NPC import NPC
+import CONFIG
+from Entities.FireElemental import FireElemental
 
 class Game(object):
 
@@ -49,10 +50,10 @@ class Game(object):
         self.update_viewport()
         self.player.update(self.keys, self.delta_time)
         self.generic.update(self.delta_time)
-
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
-        self.room_collection.update_current(self.screen, self.player)
+
+        self.room_collection.update_current(self.player, self.delta_time)
 
     def draw(self):
         """
@@ -74,6 +75,7 @@ class Game(object):
             self.draw()
             pg.display.update()
             self.delta_time = self.clock.tick(self.fps)
+
 
 if __name__ == "__main__":
     pg.init()
