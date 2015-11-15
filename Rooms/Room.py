@@ -79,5 +79,4 @@ class Room(object):
             wall_rect = wall.get_rect()
             print((wall_rect, player.rect))
             if player.is_colliding(wall_rect):
-                sys.exit(1)
                 player.collision_fix(wall_rect)
