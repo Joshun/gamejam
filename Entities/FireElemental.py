@@ -6,7 +6,7 @@ from Entities.Weapons.Firebolt import Firebolt
 class FireElemental(Enemy):
     def __init__(self, start_pos, move_speed, health):
         anim_speed = 150
-        weapon = Firebolt()
+        weapon = Firebolt(start_pos[0],start_pos[1],"right")
         super().__init__(start_pos, move_speed, anim_speed, health, weapon,
                          "graphics/sprites/entities/entity16_fire.png")
 
@@ -30,7 +30,7 @@ class FireElemental(Enemy):
     def update(self, delta, player):
         self.time_elapsed += delta
 
-        self.update_pos(player)
+        self.update_pos(player, delta)
 
         if self.time_elapsed > self.anim_speed:
             self.time_elapsed = 0
@@ -41,3 +41,4 @@ class FireElemental(Enemy):
 
     def draw(self, surface):
         surface.blit(self.image, self.rect)
+        self.weapon.draw(surface)
