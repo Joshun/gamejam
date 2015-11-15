@@ -8,6 +8,8 @@ from Rooms.Door import *
 class Room(object):
     """Base class for a Room"""
     def __init__(self, tiled_map, name, description, overlay):
+        print("hello")
+        self.visited = False
         self.__name = name
         self.__description = description
         self.__room_collection = []
@@ -21,11 +23,15 @@ class Room(object):
         self.__overlay = overlay
 
         print("description:", self.__description, "name:", self.__name)
-        self.__overlay.update_scene_intro(self.__name, [self.__description])
 
         # self.__doors = self.__setup_doors(self.__tiled_map.get_all_tiles_with_property("next_room"))
 
         print(self.__doors)
+
+    def player_enter(self):
+        if not self.visited:
+            self.visited = True
+            self.__overlay.update_scene_intro(self.__name, [self.__description])
 
     def __init_entry_point(self):
         entry_point_test = self.__tiled_map.get_all_objects_with_property("entry_point")

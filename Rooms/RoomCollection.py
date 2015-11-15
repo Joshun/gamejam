@@ -24,6 +24,7 @@ class RoomCollection(object):
 
         # getting the start room
         self.__current_room = self.get_room_by_id("start")
+        self.__current_room.player_enter()
 
     def get_rooms_dict(self):
         return self.__rooms
@@ -33,6 +34,7 @@ class RoomCollection(object):
 
     def change_room(self, room_id):
         self.__current_room = self.get_room_by_id(room_id)
+        self.__current_room.player_enter()
         return self.__current_room
 
     def draw_current(self, screen):

@@ -3,7 +3,8 @@ from Entities.Enemy import Enemy
 from Entities.Weapons.Firebolt import Firebolt
 
 
-class FireElemental(Enemy):
+# Currently exactly the same as fire elemental
+class RockElemental(Enemy):
     def __init__(self, start_pos, move_speed, health):
         anim_speed = 150
         weapon = Firebolt()
@@ -26,8 +27,6 @@ class FireElemental(Enemy):
         for i in range(4):
             x = i*(x_offset + self.rect.w)
             self.frames_down.append(self.sprite_sheet.get_image(x, y_offset, self.rect.w, self.rect.h))
-
-
 
     def update(self, delta, player):
         self.time_elapsed += delta
