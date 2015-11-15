@@ -24,7 +24,7 @@ class SpriteSheet:
         # Copy the sprite from the large sheet onto the smaller image
         image.blit(self.sprite_sheet, (0, 0), (x, y, width, height))
 
-        color_key = image.get_at((1, 1))
+        color_key = image.get_at((0, 0))
         image.set_colorkey(color_key, pygame.RLEACCEL)
 
         return image

@@ -38,7 +38,11 @@ class Room(object):
             wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
             if "interactable" in obj.properties:
                 description = obj.properties["description"]
-                walls.append(InteractableObject(wall_rect, self.__overlay, description))
+                no_reset = "no_reset" in obj.properties
+                if no_reset:
+                    walls.append(InteractableObject(wall_rect, self.__overlay, description, reset=False))
+                else:
+                    walls.append(InteractableObject(wall_rect, self.__overlay, description))
             else:
                 walls.append(Wall(wall_rect))
         return walls
