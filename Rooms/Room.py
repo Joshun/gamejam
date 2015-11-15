@@ -12,7 +12,8 @@ from Loaders.CharacterLoader import *
 
 class Room(object):
     """Base class for a Room"""
-    def __init__(self, tiled_map, name, description, overlay, player, fixed=True):
+    def __init__(self, tiled_map, name, description, overlay, player, enter_music, fixed=True):
+        self.enter_music = enter_music
         self.visited = False
         self.__fixed = fixed
         self.__name = name
@@ -50,6 +51,9 @@ class Room(object):
     def player_enter(self):
         print("Player at entry point", self.__entry_point.x, self.__entry_point.y)
         self.__player.move_to(self.__entry_point.x, self.__entry_point.y)
+        if self.enter_music:
+            pygame.mixer.music.load(self.enter_music)
+            pygame.mixer.music.play(0)
         if not self.visited:
             self.visited = True
             self.__player.play_sfx("talk")
@@ -85,7 +89,6 @@ class Room(object):
         for obj in doors_list:
             doors.append(Door(obj.properties["next_room"], pg.Rect(obj.x, obj.y, obj.width, obj.height)))
         return doors
-
 
     def set_room_collection(self, room_collection):
         self.__room_collection = room_collection

@@ -9,11 +9,10 @@ class Enemy(Character, metaclass=ABCMeta):
         super().__init__(start_pos, speed, anim_speed, health, sprite)
         self.direction = direction
         self.weapon = weapon
-        self.move_away = random.randint(0, 1)
 
     def update_pos(self, player, delta_time):
-        player_pos = np.array(player.get_centre()).astype(int)
-        enemy_pos = np.array(self.get_centre()).astype(int)
+        player_pos = np.array(player.rect.center).astype(int)
+        enemy_pos = np.array(self.rect.center).astype(int)
 
         diff_vec = player_pos - enemy_pos
         move_vector = np.zeros((2,)).astype(int)

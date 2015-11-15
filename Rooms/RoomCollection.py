@@ -19,10 +19,16 @@ class RoomCollection(object):
                 room_description = json_data[room_id]["description"]
                 room_fixed = json_data[room_id]["room_type"] == "fixed"
                 room_tilemap = json_data[room_id]["tile_map"]
+                enter_music = json_data[room_id]["enter_music"]
+                if enter_music == "":
+                    enter_music = None
 
                 print("Trying to load", room_id)
                 room_tilemap_data = TilesetLoader(room_tilemap)
-                new_room = Room(room_tilemap_data, room_name, room_description, overlay, player) if room_fixed else Room(room_tilemap_data, room_name, room_description, overlay, player, fixed=False)
+                if room_fixed:
+                    new_room = Room(room_tilemap_data, room_name, room_description, overlay, player, enter_music)
+                else:
+                    new_room = Room(room_tilemap_data, room_name, room_description, overlay, player, enter_music, fixed=False)
                 self.__rooms[room_id] = new_room
 
         # getting the start room

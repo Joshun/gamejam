@@ -3,20 +3,23 @@
         "room_name": "The Bedroom",
         "description": "What's happened? An earthquake? My room's a mess.",
         "tile_map": "Tilesets/start2.tmx",
-        "room_type": "scrollable"
+        "room_type": "scrollable",
+        "enter_music": "sounds/Audio Track-5.aiff"
     },
 
     "the_bathroom": {
         "room_name": "The Bathroom",
         "description": "This used to be a place to relax. Now there are only fragments.",
         "tile_map": "Tilesets/bathroom.tmx",
-        "room_type": "fixed"
+        "room_type": "fixed",
+        "enter_music": "sounds/Audio Track-2.aiff"
     },
 
     "the_hallway": {
         "room_name": "The Hallway",
         "description": "testsdg",
         "tile_map": "Tilesets/hallway.tmx",
-        "room_type": "scrollable"
+        "room_type": "scrollable",
+        "enter_music": "sounds/Audio Track.aiff"
     }
 }

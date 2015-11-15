@@ -32,16 +32,17 @@ class Player(Character):
     @staticmethod
     def load_sfx():
         sfx = {
-            "walk": "sfx/walk.wav",
-            "talk": "sfx/talk.wav"
+            #"walk": "sfx/walk.wav",
+            #"talk": "sfx/talk.wav",
         }
         return sfx
 
     def play_sfx(self, key):
-        if key == "sfx/talk.wav" or self.__mixer_free:
-            pygame.mixer.music.load(self.sfx[key])
-            pygame.mixer.music.play(0)
-            self.__mixer_free = False
+        pass
+       # if key == "sfx/talk.wav" or self.__mixer_free:
+       #     pygame.mixer.music.load(self.sfx[key])
+       #     pygame.mixer.music.play(0)
+       #     self.__mixer_free = False
 
     def mixer_free(self):
         self.__mixer_free = True
