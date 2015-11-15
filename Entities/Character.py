@@ -47,12 +47,11 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         self.rect.y = rect.y + rect.height
 
     def is_colliding(self, rect):
-        # pos_x, pos_y = self.get_centre()
-        # if pos_x - 8 <= rect.x <= pos_x + 8:
-        #     if pos_y - 8 <= rect.y <= pos_y + 8:
-        #         return True
-        # return False
-        return rect.colliderect(pygame.Rect(self.pos[0], self.pos[1], 16, 16))
+        pos_x, pos_y = self.get_centre()
+        if pos_x - 8 <= rect.x <= pos_x + 8:
+            if pos_y - 8 <= rect.y <= pos_y + 8:
+                return True
+        return False
 
     def hit(self, amount):
         health = self.health - amount

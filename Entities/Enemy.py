@@ -50,3 +50,6 @@ class Enemy(Character, metaclass=ABCMeta):
     @abstractmethod
     def draw(self, surface):
         pass
+
+    def is_colliding(self, rect):
+        return self.rect.colliderect(rect)
