@@ -5,7 +5,7 @@ from SpriteSheet import SpriteSheet
 class HudOverlay:
     def __init__(self, player):
         self.player = player
-        self.heart_size = (50, 50)
+        self.heart_size = (20, 20)
 
         self.img = pygame.image.load('graphics/objects/entities/life_heart.png')
 
@@ -22,7 +22,7 @@ class HudOverlay:
         offset = 0
         for i in range(heart_count):
             self.draw_heart(bg, offset)
-            offset += self.heart_size[0]+10
+            offset += self.heart_size[0]
 
     def draw_heart(self, bg, offset):
         # background = pygame.Surface(self.heart_size, 50)
@@ -33,5 +33,4 @@ class HudOverlay:
     def setup_background(self, size):
         background = pygame.Surface(size,50)
         background = background.convert()
-        background.fill((250, 250, 250, 50))
         return background
