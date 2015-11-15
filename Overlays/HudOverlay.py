@@ -9,10 +9,10 @@ class HudOverlay:
         self.img = pygame.image.load('graphics/objects/entities/life_heart.png')
 
     def draw(self, screen):
-        background = self.draw_background((screen.get_size()[0], 20), screen)
+        background = self.draw_background((screen.get_size()[0], 30), screen)
         self.draw_hearts(background, self.player.health // 20)
-
-        screen.blit(background, (0, screen.get_size()[1]-20))
+        background.convert_alpha()
+        screen.blit(background, (0, screen.get_size()[1]-30))
 
     def update(self):
         pass
@@ -24,7 +24,7 @@ class HudOverlay:
             offset += self.heart_size[0]
 
     def draw_heart(self, bg, offset):
-        bg.blit(self.img, (offset, 0))
+        bg.blit(self.img, (10+offset, 5))
 
     def draw_background(self, size, screen):
         background = pygame.Surface(size, screen.get_size()[1])
