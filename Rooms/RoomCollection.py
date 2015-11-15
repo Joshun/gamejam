@@ -48,3 +48,7 @@ class RoomCollection(object):
 
     def get_current(self):
         return self.__current_room
+
+    def set_collection(self, collection):
+        for key in self.__rooms:
+            self.__rooms[key].set_room_collection(collection)
