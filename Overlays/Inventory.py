@@ -2,16 +2,13 @@ import pygame
 
 
 class Inventory(object):
-    def __init__(self, size=10):
+    def __init__(self):
         self.items = []
-        self.size = size
         self.closed = True
 
     def draw(self, screen):
         if not self.closed:
             bg = self.setup_background(screen.get_size())
-            self.draw_bag(bg)
-            self.draw_items(bg)
             screen.blit(bg, (0, 0))
 
     def draw_items(self, bg):
@@ -19,7 +16,6 @@ class Inventory(object):
 
     def draw_bag(self, bg):
         pass
-
 
     def setup_background(self, size):
         background = pygame.Surface(size,50)

@@ -4,6 +4,7 @@ import pygame as pg
 
 from Rooms.Door import *
 from Rooms.Wall import *
+from Rooms.InteractableObject import *
 
 from CONFIG import *
 
@@ -23,11 +24,28 @@ class Room(object):
         self.__entry_point = self.__init_entry_point()
         self.__doors = self.__setup_doors(self.__tiled_map.get_all_objects_with_property("next_room"))
         self.__characters = self.__setup_characters(self.__tiled_map.get_all_objects_with_property("character"))
-        self.__walls = self.__setup_walls(self.__tiled_map.get_all_objects_with_property("wall"))
         self.__overlay = overlay
+        self.__walls = self.__setup_walls(self.__tiled_map.get_all_objects_with_property("wall"))
+
+        # self.overlay = overlay
         self.__player = player
+        # self.__interactable_objects = self.__tiled_map.get_all_objects_with_property("interactable")
         print(self.__tiled_map.get_all_objects_with_property("entry_point"))
 
+    def __setup_walls(self, wall_list):
+        walls = []
+        for obj in wall_list:
+            wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
+            if "interactable" in obj.properties:
+                description = obj.properties["description"]
+                no_reset = "no_reset" in obj.properties
+                if no_reset:
+                    walls.append(InteractableObject(wall_rect, self.__overlay, description, reset=False))
+                else:
+                    walls.append(InteractableObject(wall_rect, self.__overlay, description))
+            else:
+                walls.append(Wall(wall_rect))
+        return walls
 
     def player_enter(self):
         print("Player at entry point", self.__entry_point.x, self.__entry_point.y)
@@ -35,6 +53,9 @@ class Room(object):
         if not self.visited:
             self.visited = True
             self.__overlay.update_scene_intro(self.__name, [self.__description])
+        for wall in self.__walls:
+            if isinstance(wall, InteractableObject):
+                wall.reset()
 
     def __init_entry_point(self):
         entry_point_test = self.__tiled_map.get_all_objects_with_property("entry_point")
@@ -64,16 +85,6 @@ class Room(object):
             doors.append(Door(obj.properties["next_room"], pg.Rect(obj.x, obj.y, obj.width, obj.height)))
         return doors
 
-    @staticmethod
-    def __setup_walls(wall_list):
-        walls = []
-        for obj in wall_list:
-            wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
-            if "walkable" in obj.properties:
-                walls.append(Wall(wall_rect, solid=False))
-            else:
-                walls.append(Wall(wall_rect))
-        return walls
 
     def set_room_collection(self, room_collection):
         self.__room_collection = room_collection
@@ -96,3 +107,7 @@ class Room(object):
                 for character in self.__characters:
                     if wall.is_colliding(character.rect):
                         character.process_collision()
+            else:
+                if isinstance(wall, InteractableObject):
+                    if wall.is_colliding(player.rect):
+                        wall.display_text()
