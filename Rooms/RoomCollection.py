@@ -5,9 +5,10 @@ from Rooms.TilesetLoader import *
 
 
 class RoomCollection(object):
-    def __init__(self, description_file, overlay):
+    def __init__(self, description_file, overlay, player):
         self.__rooms = {}
         self.__current_room = None
+        self.__player = player
 
         with open(description_file) as df:
             json_data = json.load(df)
@@ -21,7 +22,7 @@ class RoomCollection(object):
 
                 print("Trying to load", room_id)
                 room_tilemap_data = TilesetLoader(room_tilemap)
-                new_room = Room(room_tilemap_data, room_name, room_description, overlay) if room_fixed else Room(room_tilemap_data, room_name, room_description, overlay, fixed=False)
+                new_room = Room(room_tilemap_data, room_name, room_description, overlay, player) if room_fixed else Room(room_tilemap_data, room_name, room_description, overlay, player, fixed=False)
                 self.__rooms[room_id] = new_room
 
         # getting the start room

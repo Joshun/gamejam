@@ -17,6 +17,6 @@
         "room_name": "The Hallway",
         "description": "testsdg",
         "tile_map": "Tilesets/hallway.tmx",
-        "room_type": "fixed"
+        "room_type": "scrollable"
     }
 }
