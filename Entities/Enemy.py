@@ -10,7 +10,7 @@ class Enemy(Character, metaclass=ABCMeta):
         self.weapon = weapon
         self.move_away = random.randint(0, 1)
 
-    def update_pos(self, player):
+    def update_pos(self, player, delta_time):
         pos_x, pos_y = self.get_centre()
         player_pos_x, player_pos_y = player.get_centre()
 
@@ -19,7 +19,9 @@ class Enemy(Character, metaclass=ABCMeta):
         dist = math.sqrt(pow(x_diff, 2) + pow(y_diff, 2))
 
         if dist - 2 <= self.weapon.range <= dist + 2:
-            pass
+            # print("should be shooting")
+            self.weapon.shoot(delta_time)
+            # print(delta_time)
         elif dist > self.weapon.range:
             scale = 1
             if abs(x_diff) > abs(y_diff):

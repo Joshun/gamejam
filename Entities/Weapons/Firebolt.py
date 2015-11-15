@@ -4,39 +4,61 @@ from Entities.Weapons.Projectile import Projectile
 
 
 class Firebolt(RangedWeapon):
-    def __init__(self):
+    def __init__(self, weapon_x, weapon_y, direction):
+        self.weapon_x = weapon_x
+        self.weapon_y = weapon_y
         self.range = 64
         self.damage = 20
-        self.speed = 8
-        self.bullet_sprite = pygame.Surface((16, 16))
+        self.speed = 2
+        self.bullet_surface = pygame.Surface((16, 16))
+        self.direction = direction
+        self.bullet = Projectile(self.weapon_x, self.weapon_y, self.speed, self.direction, self.damage, pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert(), self.range)
+        self.__elapsed_time = 0
+        self.__previous_time = 0
+        self.__update_time = 10
         # self.bullet_sprite = pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert()
         super().__init__(self.range, self.damage, self.speed)
 
-    def shoot(self,x,y, direction):
+    def __update_delta(self, d):
+        # print((self.__elapsed_time, self.__previous_time, self.__update_time))
+        self.__elapsed_time += d
+        if self.__elapsed_time - self.__previous_time > self.__update_time:
+            self.__previous_time = self.__elapsed_time
+            print("hey")
+            return True
+        else:
+            return False
+
+    def shoot(self, delta_time):
         """
         :param x: x position of the shooter
         :param y: y position of the shooter
         :param direction: direction the projectile is being shot in
-        :param damage: damage the weapon does
-        :param sprite: image for the projectile
-        :param range: range of the weapon
         :return:
         """
-        bullet = Projectile(x,y, self.speed, direction, self.weapon_damage, pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert(), self.weapon_range)
-        bullet.draw(self.bullet_sprite)
-        if direction == "top":
-            while y <= bullet.range:
-                y += bullet.speed
-                # print("x: %d, y: %d" % x,y)
-        elif direction == "right":
-            while x <= bullet.range:
-                x += bullet.speed
-                # print("x: %d, y: %d" % x,y)
-        elif direction == "bottom":
-            while y >= bullet.range:
-                y -= bullet.speed
-                # print("x: %d, y: %d" % x,y)
-        else:
-            while x >= bullet.range:
-                x -= bullet.speed
-                # print("x: %d, y: %d" % x,y)
+
+        self.bullet.x += self.bullet.speed
+        # if self.__update_delta(delta_time):
+        #     self.bullet.x += self.bullet.speed
+        #     print(self.bullet.x)
+            # bullet.draw(self.bullet_surface)
+
+        # if direction is "top":
+        #     while y <= bullet.range:
+        #         y += bullet.speed
+        #         print("x: %d, y: %d" % x,y)
+        # elif direction is "right":
+        #     while x <= bullet.range:
+        #         x += bullet.speed
+        #         print("x: %d, y: %d" % x,y)
+        # elif direction is "bottom":
+        #     while y >= bullet.range:
+        #         y -= bullet.speed
+        #         print("x: %d, y: %d" % x,y)
+        # else:
+        #     while x >= bullet.range:
+        #         x -= bullet.speed
+        #         print("x: %d, y: %d" % x,y)
+    def draw(self, screen):
+        print((self.bullet.x,self.bullet.y))
+        screen.blit(self.bullet.sprite, pygame.Rect(self.bullet.x,self.bullet.y,16,16))

@@ -52,9 +52,8 @@ class Game(object):
         self.generic.update(self.delta_time)
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
-
         self.room_collection.update_current(self.player, self.delta_time)
-
+        
     def draw(self):
         """
         Draw all necessary objects to the level surface, and then draw
