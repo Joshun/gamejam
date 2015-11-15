@@ -17,7 +17,7 @@ class Game(object):
         self.viewport = self.screen.get_rect()
         self.level = pg.Surface((1000, 1000)).convert()
         self.level_rect = self.level.get_rect()
-        self.player = Player((40, 40), 100)
+        self.player = Player((40, 40), 300)
         self.delta_time = 0
         self.overlay = Overlay(self.player)
 
