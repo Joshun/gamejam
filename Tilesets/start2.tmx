@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="walls" tilewidth="16" tileheight="28">
+  <image source="../graphics/objects/walls/tilesheet.png" width="128" height="224"/>
+ </tileset>
+ <tileset firstgid="65" name="furniture" tilewidth="16" tileheight="28">
+  <image source="../graphics/objects/furniture/tilesheet.png" width="128" height="224"/>
+ </tileset>
+ <tileset firstgid="129" name="floors" tilewidth="16" tileheight="16">
+  <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
+ </tileset>
+ <layer name="floors" width="10" height="10">
+  <data>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="65"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+  </data>
+ </layer>
+ <layer name="walls" width="10" height="10">
+  <data>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="3"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="8"/>
+   <tile gid="7"/>
+   <tile gid="7"/>
+   <tile gid="4"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="130"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="2"/>
+   <tile gid="5"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="131"/>
+   <tile gid="6"/>
+  </data>
+ </layer>
+ <layer name="furniture" width="10" height="10">
+  <data>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="66"/>
+   <tile gid="65"/>
+   <tile gid="65"/>
+   <tile gid="66"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="71"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="71"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="68"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="71"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="70"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+  </data>
+ </layer>
+ <objectgroup name="collideables" width="10" height="10">
+  <object x="2" y="1" width="159" height="31">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+  <object x="145" y="0" width="17" height="159">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+  <object x="1" y="-3" width="15" height="162">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+  <object x="13" y="66" width="19" height="42"/>
+  <object x="9" y="26" width="71" height="20">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+  <object x="125" y="18" width="22" height="28">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+  <object x="128" y="68" width="19" height="26">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+  <object x="128" y="105" width="23" height="20">
+   <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="entry and exits" width="10" height="10">
+  <object x="97" y="16" width="16" height="16">
+   <properties>
+    <property name="entry_point" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
