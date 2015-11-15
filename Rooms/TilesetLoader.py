@@ -10,7 +10,6 @@ class TilesetLoader(object):
         self.__tiled_map = pytmx.load_pygame(tileset_file, pixelalpha=True)
         self.__objects = []
 
-
         for layer in self.__tiled_map.layers:
             if isinstance(layer, pytmx.pytmx.TiledObjectGroup):
                 for obj in layer:
@@ -33,7 +32,6 @@ class TilesetLoader(object):
         for layer in self.__tiled_map.visible_layers:
             if isinstance(layer, pytmx.pytmx.TiledTileLayer):
                 for x, y, image in layer.tiles():
-                    # *4 Scaling
                     size = image.get_size()
                     bigger_img, image_rect = Scale.scale(image, x*size[0], y*size[0])
 

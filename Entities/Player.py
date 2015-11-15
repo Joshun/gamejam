@@ -7,7 +7,7 @@ from Scale import *
 
 class Player(Character):
     def __init__(self, start_pos, health):
-        speed = 2
+        speed = 1
         super().__init__(start_pos, speed, 70, health, "graphics/objects/entities/entity16_player.png")
 
         self.frames_up = []
@@ -87,10 +87,10 @@ class Player(Character):
         for wall in walls:
             if wall.is_solid():
                 if wall.is_colliding(north_test_rect):
-                    print("no north")
+                    #print("no north")
                     self.can_move["up"] = False
                 if wall.is_colliding(south_test_rect):
-                    print("no south")
+                    # print("no south")
                     self.can_move["down"] = False
                 if wall.is_colliding(east_test_rect):
                     self.can_move["right"] = False
