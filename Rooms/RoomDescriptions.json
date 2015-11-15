@@ -15,7 +15,7 @@
 
     "the_hallway": {
         "room_name": "The Hallway",
-        "description": "",
+        "description": "testsdg",
         "tile_map": "Tilesets/hallway.tmx",
         "room_type": "fixed"
     }
