@@ -110,8 +110,7 @@ class Player(Character):
 
         for enemy in enemies:
             if self.rect.colliderect(enemy.rect):
-                enemy.rect.x += 10
-                enemy.rect.y += 10
+                enemy.health = 0
                 self.health -= enemy.weapon.damage
 
     def test_for_collisions(self, walls):
