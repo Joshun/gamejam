@@ -22,6 +22,7 @@ class CharacterLoader:
             speed = int(properties["speed"])
             character_type = properties["character"]
             health = int(properties["health"])
+            direction = properties["direction"]
 
             if character_type == "enemy":
                 self.__characters.append(self.__create_enemy(pos, speed, properties["enemy_type"], health))
