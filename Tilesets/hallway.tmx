@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="furniture" tilewidth="16" tileheight="28">
+=======
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" nextobjectid="14">
+ <tileset firstgid="1" name="furniture" tilewidth="16" tileheight="28" tilecount="64">
+>>>>>>> 152ef216e6b69637ddf7e39c5e95d2fcaf4ea029
   <image source="../graphics/objects/furniture/tilesheet.png" width="128" height="224"/>
  </tileset>
  <tileset firstgid="65" name="walls" tilewidth="16" tileheight="28">
@@ -696,8 +701,13 @@
    <tile gid="0"/>
   </data>
  </layer>
+<<<<<<< HEAD
  <objectgroup name="entry and exits" width="15" height="15">
   <object x="192" y="222" width="16" height="16">
+=======
+ <objectgroup name="entry and exits">
+  <object id="1" x="192" y="80" width="16" height="16">
+>>>>>>> 152ef216e6b69637ddf7e39c5e95d2fcaf4ea029
    <properties>
     <property name="entry_point" value=""/>
    </properties>
@@ -707,12 +717,17 @@
     <property name="next_room" value="the_bathroom"/>
    </properties>
   </object>
-  <object x="61" y="48" width="16" height="16">
+  <object id="11" x="61" y="48" width="16" height="16">
    <properties>
     <property name="next_room" value="the_bathroom"/>
    </properties>
   </object>
-  <object x="-139" y="46" height="2"/>
+  <object id="12" x="-139" y="46" height="2"/>
+  <object id="13" x="192" y="208" width="16" height="16">
+   <properties>
+    <property name="next_room" value="start"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collideables" width="15" height="15">
   <object x="48" y="0" width="17" height="82">
