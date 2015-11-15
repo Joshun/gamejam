@@ -25,7 +25,6 @@ class Game(object):
         # self.room_collection.get_current().set_room_collection(self.room_collection)
         self.room_collection.set_collection(self.room_collection)
 
-
         entry_point = self.room_collection.get_current().get_entry_point()
         self.player.move_to(entry_point.x, entry_point.y)
 
@@ -48,8 +47,6 @@ class Game(object):
         for event in pg.event.get():
             if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
                 self.done = True
-
-
 
     def update(self):
         """Update the player and current viewport."""

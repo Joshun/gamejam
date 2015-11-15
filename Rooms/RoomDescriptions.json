@@ -12,7 +12,7 @@
         "description": "This used to be a place to relax. Now there are only fragments.",
         "tile_map": "Tilesets/bathroom.tmx",
         "room_type": "fixed",
-        "enter_music": "sounds/Audio Track-2.aiff"
+        "enter_music": ""
     },
 
     "the_hallway": {

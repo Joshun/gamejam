@@ -53,10 +53,11 @@ class Room(object):
     def player_enter(self):
         print("Player at entry point", self.__entry_point.x, self.__entry_point.y)
         self.__player.move_to(self.__entry_point.x, self.__entry_point.y)
-        if self.enter_music:
-            pygame.mixer.music.load(self.enter_music)
-            pygame.mixer.music.play(0)
+
         if not self.visited:
+            if self.enter_music:
+                pygame.mixer.music.load(self.enter_music)
+                pygame.mixer.music.play(0)
             self.visited = True
             self.__player.play_sfx("talk")
             self.__overlay.update_scene_intro(self.__name, [self.__description])
