@@ -75,6 +75,21 @@ class Player(Character):
     #     for i in self.can_move:
     #         self.can_move[i] = True
     #
+    def test_for_nearby_enemies(self, enemies):
+        north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
+        south_test_rect = pygame.Rect(self.rect.x, self.rect.y + self.speed, 16, 16)
+        east_test_rect = pygame.Rect(self.rect.x + self.speed, self.rect.y, 16, 16)
+        west_test_rect = pygame.Rect(self.rect.x - self.speed, self.rect.y, 16, 16)
+
+        for enemy in enemies:
+            if self.rect.colliderect(enemy.rect):
+                self.rect.x -= 10
+                self.rect.y -= 10
+                enemy.rect.x += 10
+                enemy.rect.y += 10
+                self.health -= enemy.weapon.damage
+
+
     def test_for_collisions(self, walls):
         north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
         south_test_rect = pygame.Rect(self.rect.x, self.rect.y + self.speed, 16, 16)
@@ -123,6 +138,7 @@ class Player(Character):
         return self.rect.colliderect(rect)
 
     def die(self):
+
         print('U DEAD')
 
     def get_centre_rect(self):
