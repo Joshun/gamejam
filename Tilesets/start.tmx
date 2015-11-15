@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" nextobjectid="104">
- <tileset firstgid="1" name="tile16_pavement_b" tilewidth="16" tileheight="16" tilecount="1">
-  <image source="../graphics/objects/tiles/tile16_pavement_b.png" width="16" height="16"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="5">
+ <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
+  <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
  </tileset>
- <tileset firstgid="2" name="markers" tilewidth="16" tileheight="16" tilecount="1">
-  <image source="../graphics/sprites/tiles/tile16_blank.png" width="20" height="22"/>
- </tileset>
- <tileset firstgid="3" name="item16_wardrobe" tilewidth="16" tileheight="16" tilecount="1">
-  <image source="../graphics/objects/furniture/wardrobe_normal.png" width="16" height="24"/>
-  <tile id="0">
-   <properties>
-    <property name="next_room" value="room2"/>
-   </properties>
-  </tile>
- </tileset>
- <tileset firstgid="4" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
-  <image source="../graphics/sprites/tiles/tilesheet.png" width="128" height="128"/>
- </tileset>
- <layer name="base" width="100" height="100">
+ <layer name="Tile Layer 1" width="40" height="30">
   <data encoding="base64" compression="zlib">
-   eJzt1DEKACAMBMFY+P8v21hYSyBXzMB9IAupAoA/q2n0eG+67/SYo0cW/yqLHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApDtulwBr
-  </data>
- </layer>
- <layer name="Tile Layer 3" width="100" height="100">
-  <data encoding="base64" compression="zlib">
-   eJztzjENAAAIA7Al+PeMg53wtAqaAAAA3JrvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAtLhgAE
+   eJztzjEOACAIADGI//+zi5MTG2ja5PbLiMhiHapv/t78u63TVNP/AAAA4Ecb3aUAOQ==
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
-  <object id="99" x="288" y="80" width="16" height="16">
-   <properties>
-    <property name="entry_point" value=""/>
-   </properties>
-  </object>
-  <object id="102" x="64" y="80" width="32" height="32">
+  <object id="2" x="64" y="48" width="32" height="32">
    <properties>
     <property name="next_room" value="room2"/>
+   </properties>
+  </object>
+  <object id="4" x="16" y="0" width="16" height="16">
+   <properties>
+    <property name="entry_point" value=""/>
    </properties>
   </object>
  </objectgroup>
