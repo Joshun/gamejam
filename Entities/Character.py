@@ -26,6 +26,7 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         self.images = []
         self.anim_speed = anim_speed
         self.time_elapsed = 0
+        self.rect = None
 
     def get_centre(self):
         pos_x = self.rect.x + self.rect.w/2
@@ -40,6 +41,10 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
     def check_pos(self):
         if self.rect.y < TOP_CAP:
             self.rect.y = TOP_CAP
+
+    def collision_fix(self, rect):
+        self.rect.x = rect.x + rect.width
+        self.rect.y = rect.y + rect.height
 
     def is_colliding(self, rect):
         pos_x, pos_y = self.get_centre()

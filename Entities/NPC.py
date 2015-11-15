@@ -34,3 +34,6 @@ class NPC(Character):
 
     def draw(self, surface):
         surface.blit(self.image, self.rect)
+
+    def is_colliding(self, rect):
+        return self.rect.colliderect(rect)
