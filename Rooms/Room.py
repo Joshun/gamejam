@@ -92,3 +92,7 @@ class Room(object):
             # if player.is_colliding(wall_rect):
             #     player.collision_fix(wall_rect)
             #     sys.exit(0)
+
+            for character in self.__characters:
+                if wall.is_colliding(character.rect):
+                    character.process_collision()

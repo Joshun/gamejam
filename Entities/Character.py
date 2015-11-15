@@ -52,6 +52,9 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
                 return True
         return False
 
+    def process_collision(self):
+        self.speed = -self.speed
+
     def hit(self, amount):
         health = self.health - amount
 
