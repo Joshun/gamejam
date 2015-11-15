@@ -160,7 +160,8 @@ class Player(Character):
         return self.rect.colliderect(rect)
 
     def die(self, surface):
-        surface.blit(pygame.i)
+        # surface.blit(pygame.i)
+        pass
 
     def get_centre_rect(self):
         width = 16
