@@ -24,7 +24,7 @@ class Firebolt(RangedWeapon):
         self.__elapsed_time += d
         if self.__elapsed_time - self.__previous_time > self.__update_time:
             self.__previous_time = self.__elapsed_time
-            # print("hey")
+            print("hey")
             return True
         else:
             return False
@@ -38,12 +38,16 @@ class Firebolt(RangedWeapon):
         """
 
         if self.direction is "right":
+            print("direction right")
             self.bullet.x += self.bullet.speed
         elif self.direction is "left":
+            print("direction left")
             self.bullet.x -= self.bullet.speed
-        elif self.direction is "top":
+        elif self.direction is "up":
+            print("direction up")
             self.bullet.y += self.bullet.speed
         else:
+            print("direction down")
             self.bullet.y -= self.bullet.speed
         # if self.__update_delta(delta_time):
         #     self.bullet.x += self.bullet.speed
@@ -67,5 +71,4 @@ class Firebolt(RangedWeapon):
         #         x -= bullet.speed
         #         print("x: %d, y: %d" % x,y)
     def draw(self, screen):
-        # print((self.bullet.x,self.bullet.y))
         screen.blit(self.bullet.sprite, pygame.Rect(self.bullet.x,self.bullet.y,16,16))
