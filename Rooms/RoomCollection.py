@@ -19,6 +19,7 @@ class RoomCollection(object):
                 room_fixed = json_data[room_id]["room_type"] == "fixed"
                 room_tilemap = json_data[room_id]["tile_map"]
 
+                print("Trying to load", room_id)
                 room_tilemap_data = TilesetLoader(room_tilemap)
                 new_room = Room(room_tilemap_data, room_name, room_description, overlay) if room_fixed else Room(room_tilemap_data, room_name, room_description, overlay, fixed=False)
                 self.__rooms[room_id] = new_room
