@@ -106,3 +106,9 @@ class Player(Character):
         cd.init()
         cd.eject()
         sys.exit(0)
+
+    def get_centre_rect(self):
+        width = 16
+        height = 16
+        pos_x, pos_y = self.get_centre()
+        return pygame.Rect(pos_x - (width/2), pos_y - (height/2), width, height)
