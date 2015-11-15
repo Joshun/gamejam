@@ -3,6 +3,7 @@ from Entities.Character import Character
 import sys
 from pygame import cdrom
 
+
 class Player(Character):
     def __init__(self, start_pos, health):
         speed = 2
@@ -104,6 +105,7 @@ class Player(Character):
     def die(self):
         cd = cdrom.CD(0)
         cd.init()
+        
         cd.eject()
         sys.exit(0)
 
