@@ -2,7 +2,7 @@ from Entities.FireElemental import FireElemental
 from Entities.Player import Player
 from Overlays.Overlay import Overlay
 from Rooms.RoomCollection import *
-
+from Entities.NPC import NPC
 
 class Game(object):
 
@@ -20,8 +20,9 @@ class Game(object):
         self.player = Player((40, 40), 100)
         self.delta_time = 0
         self.overlay = Overlay(self.player)
-        self.overlay.update_scene_intro("Hello", ["ite"])
         self.enemy = FireElemental((100, 100), 1, 10)
+
+        self.generic = NPC((200, 200))
 
         self.room_collection = RoomCollection("Rooms/RoomDescriptions.json", self.overlay)
         self.room_collection.get_current().set_room_collection(self.room_collection)
@@ -47,6 +48,7 @@ class Game(object):
         self.keys = pg.key.get_pressed()
         self.update_viewport()
         self.player.update(self.keys, self.delta_time)
+        self.generic.update(self.delta_time)
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
         self.room_collection.update_current(self.screen, self.player)
@@ -61,6 +63,7 @@ class Game(object):
         self.room_collection.draw_current(self.level)
         self.player.draw(self.level)
         self.enemy.draw(self.level)
+        self.generic.draw(self.level)
         self.screen.blit(self.level, (0, 0), self.viewport)
         self.overlay.draw(self.screen)
 

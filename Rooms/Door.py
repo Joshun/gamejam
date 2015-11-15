@@ -7,6 +7,6 @@ class Door(object):
         return self.__next_room
 
     def player_action(self, player, room_collection):
-        print("testing ", player.rect, " against ", self.__rect)
+        # print("testing ", player.rect, " against ", self.__rect)
         if player.is_colliding(self.__rect):
             room_collection.change_room(self.__next_room)
