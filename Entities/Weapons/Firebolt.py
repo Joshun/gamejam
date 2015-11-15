@@ -7,7 +7,7 @@ class Firebolt(RangedWeapon):
     def __init__(self, weapon_x, weapon_y, direction):
         self.weapon_x = weapon_x
         self.weapon_y = weapon_y
-        self.range = 64
+        self.range = 2
         self.damage = 20
         self.speed = 2
         self.bullet_surface = pygame.Surface((16, 16))
