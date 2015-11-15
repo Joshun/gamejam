@@ -1,0 +1,2 @@
+SCALE = 2
+TOP_CAP = 30
