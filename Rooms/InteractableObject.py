@@ -1,6 +1,18 @@
-class InteractableObject:
-    def __init__(self, rect):
-        self.__rect = rect
+from Rooms.Wall import *
 
-    def is_colliding(self, rect):
-        return self.__rect.colliderect(rect)
+class InteractableObject(Wall):
+    def __init__(self, rect, overlay, description):
+        super().__init__(rect, solid=False)
+        self.__description = description
+        self.__overlay = overlay
+        self.__shown = False
+
+    def display_text(self):
+        if not self.__shown:
+            self.__overlay.update_scene_intro("...", [self.__description])
+            self.__shown = True
+
+    def reset(self):
+        self.__shown = False
+
+
