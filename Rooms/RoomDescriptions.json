@@ -3,7 +3,7 @@
         "room_name": "The Bedroom",
         "description": "What's happened? An earthquake? My room's a mess.",
         "tile_map": "Tilesets/start2.tmx",
-        "room_type": "fixed"
+        "room_type": "scrollable"
     },
 
     "the_bathroom": {
