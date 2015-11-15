@@ -101,11 +101,7 @@ class Player(Character):
         return self.rect.colliderect(rect)
 
     def die(self):
-        cd = cdrom.CD(0)
-        cd.init()
-
-        cd.eject()
-        sys.exit(0)
+        print('U DEAD')
 
     def get_centre_rect(self):
         width = 16
