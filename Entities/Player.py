@@ -6,7 +6,7 @@ from Scale import *
 class Player(Character):
     def __init__(self, start_pos, health):
         speed = 1
-        super().__init__(start_pos, speed, 70, health, "graphics/objects/entities/entity16_player.png")
+        super().__init__(start_pos, speed, 1000, health, "graphics/objects/entities/entity16_player.png")
 
         self.frames_up = []
         self.frames_down = []
