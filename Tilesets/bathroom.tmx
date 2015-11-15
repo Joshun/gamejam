@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="7" tilewidth="16" tileheight="16" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="7" tilewidth="16" tileheight="16" nextobjectid="12">
  <tileset firstgid="1" name="walls" tilewidth="16" tileheight="28" tilecount="64">
   <image source="../graphics/objects/walls/tilesheet.png" width="128" height="224"/>
  </tileset>
@@ -37,7 +37,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="135"/>
-   <tile gid="134"/>
+   <tile gid="135"/>
    <tile gid="135"/>
    <tile gid="131"/>
    <tile gid="133"/>
@@ -308,6 +308,15 @@
   </object>
   <object id="6" x="49" y="-1" width="143" height="32">
    <properties>
+    <property name="wall" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="interactables">
+  <object id="11" x="32" y="48" width="80" height="48">
+   <properties>
+    <property name="description" value="Hmmmm.... bacon....."/>
+    <property name="interactable" value=""/>
     <property name="wall" value=""/>
    </properties>
   </object>
