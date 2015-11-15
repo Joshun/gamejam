@@ -742,22 +742,13 @@
     <property name="wall" value=""/>
    </properties>
   </object>
-<<<<<<< HEAD
-  <object x="159" y="78" width="17" height="162"/>
-  <object x="57" y="70" width="119" height="26">
-=======
   <object id="6" x="159" y="78" width="17" height="162"/>
   <object id="7" x="52" y="75" width="124" height="18">
->>>>>>> 5bc3afab3c1f4ddf767bdd9eb4dc2849f0c813a8
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-<<<<<<< HEAD
-  <object x="172" y="235" width="55" height="26">
-=======
   <object id="8" x="172" y="235" width="55" height="6">
->>>>>>> 5bc3afab3c1f4ddf767bdd9eb4dc2849f0c813a8
    <properties>
     <property name="wall" value=""/>
    </properties>
