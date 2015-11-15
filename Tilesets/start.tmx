@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="25">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="21">
  <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
   <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
  </tileset>
  <layer name="base" width="40" height="30">
   <data encoding="base64" compression="zlib">
-   eJztzkEKACAMxMAtgv9/sgieCoXeXCUDuSckRbMbum/8vfmXjZMr9z/8babcOL9t7n8AAAAAagvKsgB1
+   eJztzjEOACAIADGI//+zi5MTG2ja5PbLiMhiHapv/t78u63TVNP/AAAA4Ecb3aUAOQ==
   </data>
  </layer>
  <objectgroup name="entry and exit points">
@@ -14,13 +14,13 @@
     <property name="next_room" value="room2"/>
    </properties>
   </object>
-  <object id="4" x="16" y="32" width="16" height="16">
+  <object id="4" x="16" y="0" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="characters" visible="0">
+ <objectgroup name="characters">
   <object id="6" x="128" y="0" width="16" height="16">
    <properties>
     <property name="character" value="enemy"/>
@@ -47,12 +47,10 @@
   </object>
  </objectgroup>
  <objectgroup name="walls">
-  <object id="22" x="64" y="144" width="48" height="48">
+  <object id="18" x="0" y="16" width="16" height="48">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object id="23" x="144" y="128"/>
-  <object id="24" x="144" y="32"/>
  </objectgroup>
 </map>

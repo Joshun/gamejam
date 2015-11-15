@@ -66,7 +66,6 @@ class Room(object):
         for obj in wall_list:
             wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
             walls.append(Wall(wall_rect))
-        print("Room", self.__name, "loaded", len(walls), "walls.")
         return walls
 
     def set_room_collection(self, room_collection):
@@ -86,7 +85,6 @@ class Room(object):
         for wall in self.__walls:
             if wall.is_colliding(player.rect):
                 player.set_movement_blocking()
-                print("collided with ", wall)
             else:
                 player.unblock_movement()
             # if player.is_colliding(wall_rect):

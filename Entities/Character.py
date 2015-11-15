@@ -68,7 +68,7 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
 
     def move_to(self, x, y):
         self.rect.x = x
-        self.rect.y = y
+        self.rect.y = y + self.rect.h
 
     @abstractmethod
     def die(self):
