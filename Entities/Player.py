@@ -28,21 +28,25 @@ class Player(Character):
         self.prev_direction = ""
         self.current_direction = ""
         self.__mixer_free = True
+        self.__sfx_enabled = False
 
     @staticmethod
     def load_sfx():
         sfx = {
-            #"walk": "sfx/walk.wav",
-            #"talk": "sfx/talk.wav",
+            "walk": "sfx/walk.wav",
+            "talk": "sfx/talk.wav"
         }
         return sfx
 
+    def enable_sfx(self):
+        self.__sfx_enabled = True
     def play_sfx(self, key):
-        pass
-       # if key == "sfx/talk.wav" or self.__mixer_free:
-       #     pygame.mixer.music.load(self.sfx[key])
-       #     pygame.mixer.music.play(0)
-       #     self.__mixer_free = False
+        if not self.__sfx_enabled:
+            return
+        if key == "sfx/talk.wav" or self.__mixer_free:
+            pygame.mixer.music.load(self.sfx[key])
+            pygame.mixer.music.play(0)
+            self.__mixer_free = False
 
     def mixer_free(self):
         self.__mixer_free = True

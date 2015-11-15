@@ -29,6 +29,10 @@ class Game(object):
         entry_point = self.room_collection.get_current().get_entry_point()
         self.player.move_to(entry_point.x, entry_point.y)
 
+        for arg in sys.argv:
+            if arg == "-sfx":
+                self.player.enable_sfx()
+
     def update_viewport(self):
         """
         The viewport will stay centered on the player unless the player
