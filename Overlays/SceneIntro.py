@@ -7,18 +7,22 @@ class SceneIntro():
         self.font = pygame.font.Font(None, 24)
 
         self.location = location
-        self.current_line = 0
-        self.lines = lines
+        self.lines = lines[0]
         self.closed = False
+        self.offset = 0
 
     def draw(self, screen):
-        if not self.closed:
-            bg = self.setup_background((screen.get_size()[0],70))
-            self.display_location(bg)
-            self.display_paragraph(bg)
-            screen.blit(bg, (0, 0))
+        if self.closed:
+            self.offset += 3
+        
+        bg = self.setup_background((screen.get_size()[0],70-self.offset))
+        self.display_location(bg)
+        self.display_paragraph(bg)
+        screen.blit(bg, (0, 0))
 
     def setup_background(self, size):
+        if size[1] < 0:
+            size = (size[0],0)
         background = pygame.Surface(size,50)
         background = background.convert()
         background.fill((250, 250, 250, 50))
@@ -33,13 +37,12 @@ class SceneIntro():
         self.font.set_bold(False)
 
     def display_paragraph(self, background):
-        text = self.font.render(self.lines[self.current_line], 1, (100, 100, 100))
+        text = self.font.render(self.lines + " [SPACE]", 1, (100, 100, 100))
         textpos = text.get_rect().move((0,40))
         textpos.centerx = background.get_rect().centerx
         background.blit(text, textpos)
 
     def next(self):
-        self.current_line += 1
-        if self.current_line == len(self.lines):
-            self.closed = True
+
+        self.closed = True
 
