@@ -26,6 +26,7 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         self.images = []
         self.anim_speed = anim_speed
         self.time_elapsed = 0
+        self.rect = None
 
     def get_centre(self):
         pos_x = self.rect.x + self.rect.w/2
