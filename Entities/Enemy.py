@@ -10,7 +10,6 @@ class Enemy(Character, metaclass=ABCMeta):
         self.weapon = weapon
         self.move_away = random.randint(0, 1)
 
-
     def update_pos(self, player, delta_time):
         player_pos = np.array(player.get_centre()).astype(int)
         enemy_pos = np.array(self.get_centre()).astype(int)
@@ -33,3 +32,6 @@ class Enemy(Character, metaclass=ABCMeta):
 
     def is_colliding(self, rect):
         return self.rect.colliderect(rect)
+
+    def die(self):
+        pass

@@ -1,6 +1,7 @@
 import pygame
 from Entities.Character import Character
-
+import sys
+from pygame import cdrom
 
 class Player(Character):
     def __init__(self, start_pos, health):
@@ -22,6 +23,11 @@ class Player(Character):
 
     def load_images(self):
         x_offset = 16
+        self.frames_down.clear()
+        self.frames_up.clear()
+        self.frames_right.clear()
+        self.frames_left.clear()
+
         for i in range(12):
             y = i*self.rect.h
             self.frames_down.append(self.sprite_sheet.get_image(0, y, self.rect.w, self.rect.h))
@@ -61,6 +67,9 @@ class Player(Character):
         self.check_pos()
         self.check_keys(keys)
 
+        if self.health <= 0:
+            self.die()
+
         self.time_elapsed += delta
 
     def draw(self, surface):
@@ -69,3 +78,8 @@ class Player(Character):
     def is_colliding(self, rect):
         return self.rect.colliderect(rect)
 
+    def die(self):
+        cd = cdrom.CD(0)
+        cd.init()
+        cd.eject()
+        sys.exit(0)

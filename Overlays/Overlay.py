@@ -27,7 +27,7 @@ class Overlay():
                     self.current = self.hud_overlay
 
         else:
-            self.hud_overlay.update(keys)
+            self.hud_overlay.update()
 
             if keys[pygame.K_o]:
                 print ('Open inventory')

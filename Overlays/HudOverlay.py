@@ -14,9 +14,8 @@ class HudOverlay:
         self.draw_hearts(background, self.player.health // 33)
         screen.blit(background, (0,0))
 
-    def update(self, keys):
-        if keys[pygame.K_h]:
-            self.player.hit(10)
+    def update(self):
+        pass
 
     def draw_hearts(self, bg, heart_count):
         offset = 0
