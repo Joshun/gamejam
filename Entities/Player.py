@@ -66,14 +66,35 @@ class Player(Character):
         else:
             self.image = self.images[0]
 
-    def set_movement_blocking(self):
-        for i in self.can_move:
-            self.can_move[i] = True
-        self.can_move[self.prev_direction] = False
+    # def set_movement_blocking(self):
+    #     for i in self.can_move:
+    #         self.can_move[i] = True
+    #     self.can_move[self.prev_direction] = False
+    #
+    # def unblock_movement(self):
+    #     for i in self.can_move:
+    #         self.can_move[i] = True
+    #
+    def test_for_collisions(self, walls):
+        north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
+        south_test_rect = pygame.Rect(self.rect.x, self.rect.y + self.speed, 16, 16)
+        east_test_rect = pygame.Rect(self.rect.x + self.speed, self.rect.y, 16, 16)
+        west_test_rect = pygame.Rect(self.rect.x - self.speed, self.rect.y, 16, 16)
 
-    def unblock_movement(self):
-        for i in self.can_move:
-            self.can_move[i] = True
+        for key in self.can_move:
+            self.can_move[key] = True
+
+        for wall in walls:
+            if wall.is_colliding(north_test_rect):
+                print("no north")
+                self.can_move["up"] = False
+            if wall.is_colliding(south_test_rect):
+                print("no south")
+                self.can_move["down"] = False
+            if wall.is_colliding(east_test_rect):
+                self.can_move["right"] = False
+            if wall.is_colliding(west_test_rect):
+                self.can_move["left"] = False
 
     def update_anim(self):
         if self.time_elapsed > self.anim_speed:

@@ -49,10 +49,10 @@ class Game(object):
         if self.keys[pygame.K_h]:
             self.player.hit(10)
         self.update_viewport()
+        self.room_collection.update_current(self.player, self.delta_time)
         self.player.update(self.keys, self.delta_time)
         self.overlay.update(self.keys)
-        self.room_collection.update_current(self.player, self.delta_time)
-        
+
     def draw(self):
         """
         Draw all necessary objects to the level surface, and then draw

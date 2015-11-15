@@ -82,15 +82,9 @@ class Room(object):
         for character in self.__characters:
             character.update(delta_time, player)
 
-        for wall in self.__walls:
-            if wall.is_colliding(player.rect):
-                player.set_movement_blocking()
-            else:
-                player.unblock_movement()
-            # if player.is_colliding(wall_rect):
-            #     player.collision_fix(wall_rect)
-            #     sys.exit(0)
+        player.test_for_collisions(self.__walls)
 
+        for wall in self.__walls:
             for character in self.__characters:
                 if wall.is_colliding(character.rect):
                     character.process_collision()
