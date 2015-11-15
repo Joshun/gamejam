@@ -11,8 +11,9 @@ from Loaders.CharacterLoader import *
 
 class Room(object):
     """Base class for a Room"""
-    def __init__(self, tiled_map, name, description, overlay):
+    def __init__(self, tiled_map, name, description, overlay, fixed=True):
         self.visited = False
+        self.__fixed = fixed
         self.__name = name
         self.__description = description
         self.__room_collection = []
@@ -25,6 +26,7 @@ class Room(object):
         self.__walls = self.__setup_walls(self.__tiled_map.get_all_objects_with_property("wall"))
 
         self.__overlay = overlay
+        print(self.__tiled_map.get_all_objects_with_property("entry_point"))
 
     def player_enter(self):
         if not self.visited:
@@ -33,6 +35,7 @@ class Room(object):
 
     def __init_entry_point(self):
         entry_point_test = self.__tiled_map.get_all_objects_with_property("entry_point")
+        print(entry_point_test)
         if len(entry_point_test) == 0:
             # apologies for the Steve Maddock style code
             print("Error! Room ", self, "has no entry point.")
@@ -43,6 +46,9 @@ class Room(object):
 
     def get_entry_point(self):
         return self.__entry_point
+
+    def is_fixed(self):
+        return self.__fixed
 
     @staticmethod
     def __setup_characters(characters_list):
@@ -86,3 +92,7 @@ class Room(object):
             # if player.is_colliding(wall_rect):
             #     player.collision_fix(wall_rect)
             #     sys.exit(0)
+
+            for character in self.__characters:
+                if wall.is_colliding(character.rect):
+                    character.process_collision()

@@ -1,13 +1,22 @@
-{    
+{
     "start": {
-        "room_name": "Your Bedroom | Ten minutes before the end of the world.",
+        "room_name": "The Bedroom",
         "description": "What's happened? An earthquake? My room's a mess.",
-        "tile_map": "Tilesets/start.tmx"
+        "tile_map": "Tilesets/start2.tmx",
+        "room_type": "fixed"
     },
 
-    "room2": {
-        "room_name": "Your attic",
-        "description": "A fun place to hang out",
-        "tile_map": "Tilesets/room2.tmx"
+    "the_bathroom": {
+        "room_name": "The Bathroom",
+        "description": "This used to be a place to relax. Now there are only fragments.",
+        "tile_map": "Tilesets/bathroom.tmx",
+        "room_type": "fixed"
+    },
+
+    "the_hallway": {
+        "room_name": "The Hallway",
+        "description": "testsdg",
+        "tile_map": "Tilesets/hallway.tmx",
+        "room_type": "fixed"
     }
 }
