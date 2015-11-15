@@ -3,6 +3,7 @@ import sys
 import pygame as pg
 
 from Rooms.Door import *
+from Rooms.Wall import *
 
 from Loaders.CharacterLoader import *
 
@@ -19,6 +20,7 @@ class Room(object):
         self.__entry_point = self.__init_entry_point()
         self.__doors = self.__setup_doors(self.__tiled_map.get_all_objects_with_property("next_room"))
         self.__characters = self.__setup_characters(self.__tiled_map.get_all_objects_with_property("character"))
+        self.__walls = self.__setup_walls(self.__tiled_map.get_all_objects_with_property("wall"))
 
         self.__overlay = overlay
 
@@ -42,14 +44,25 @@ class Room(object):
     def get_entry_point(self):
         return self.__entry_point
 
-    def __setup_characters(self, characters_list):
+    @staticmethod
+    def __setup_characters(characters_list):
         return CharacterLoader(characters_list).get_characters()
 
-    def __setup_doors(self, doors_list):
+
+    @staticmethod
+    def __setup_doors(doors_list):
         doors = []
         for obj in doors_list:
             doors.append(Door(obj.properties["next_room"], pg.Rect(obj.x, obj.y, obj.width, obj.height)))
         return doors
+
+    @staticmethod
+    def __setup_walls(wall_list):
+        walls = []
+        for obj in wall_list:
+            wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
+            walls.append(Wall(wall_rect))
+        return walls
 
     def set_room_collection(self, room_collection):
         self.__room_collection = room_collection
@@ -60,8 +73,12 @@ class Room(object):
             obj.draw(screen)
 
     def update(self, player, delta_time):
-        for obj in self.__doors:
-            obj.player_action(player, self.__room_collection)
-        for obj in self.__characters:
-            obj.update(delta_time, player)
+
+        for door in self.__doors:
+            door.player_action(player, self.__room_collection)
+        print(self.__characters)
+        for character in self.__characters:
+            print(character.update(delta_time, player))
             # print("Trying to update character", obj)
+        for wall in self.__walls:
+            pass
