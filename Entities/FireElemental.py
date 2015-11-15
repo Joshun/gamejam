@@ -50,6 +50,44 @@ class FireElemental(Enemy):
         self.update_pos(player, delta)
         self.weapon.shoot(delta)
 
+        north_test_rect = pygame.Rect(self.rect.x, self.rect.y - self.speed, 16, 16)
+        south_test_rect = pygame.Rect(self.rect.x, self.rect.y + self.speed, 16, 16)
+        east_test_rect = pygame.Rect(self.rect.x + self.speed, self.rect.y, 16, 16)
+        west_test_rect = pygame.Rect(self.rect.x - self.speed, self.rect.y, 16, 16)
+
+
+        no_north = False
+        no_south = False
+        no_east = False
+        no_west = False
+
+        if north_test_rect.colliderect(player.rect):
+            no_north = True
+        if south_test_rect.colliderect(player.rect):
+            no_south = True
+        if east_test_rect.colliderect(player.rect):
+            no_east = True
+        if west_test_rect.colliderect(player.rect):
+            no_west = True
+
+        if no_north:
+            if self.direction == "up":
+                self.direction = "down"
+                self.rect.y -= 32
+        elif no_south:
+            if self.direction == "down":
+                self.direction = "up"
+                self.rect.y += 32
+        elif no_east:
+            if self.direction == "right":
+                self.direction = "left"
+                self.rect.x -= 32
+        elif no_west:
+            if self.direction == "left":
+                self.direction = "right"
+                self.rect.x += 32
+
+
         if self.direction == "up":
             self.images = self.frames_up
             self.update_anim()

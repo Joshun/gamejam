@@ -5,6 +5,7 @@ import pygame as pg
 from Rooms.Door import *
 from Rooms.Wall import *
 from Rooms.InteractableObject import *
+from Entities.FireElemental import FireElemental
 
 from CONFIG import *
 
@@ -24,9 +25,10 @@ class Room(object):
         self.__tiled_map_objects = self.__tiled_map.get_objects()
         self.__entry_point = self.__init_entry_point()
         self.__doors = self.__setup_doors(self.__tiled_map.get_all_objects_with_property("next_room"))
-        self.__characters = self.__setup_characters(self.__tiled_map.get_all_objects_with_property("character"))
+        self.__characters =  self.__setup_characters(self.__tiled_map.get_all_objects_with_property("character"))
         self.__overlay = overlay
         self.__walls = self.__setup_walls(self.__tiled_map.get_all_objects_with_property("wall"))
+        self.__enemies = [character for character in self.__characters]
 
         # self.overlay = overlay
         self.__player = player
@@ -105,6 +107,7 @@ class Room(object):
             character.update(delta_time, player)
 
         player.test_for_collisions(self.__walls)
+        player.test_for_nearby_enemies(self.__enemies)
 
         for wall in self.__walls:
             if wall.is_solid():
