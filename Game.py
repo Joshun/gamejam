@@ -3,6 +3,8 @@ from Entities.Player import Player
 from Overlays.Overlay import Overlay
 from Rooms.RoomCollection import *
 from Entities.NPC import NPC
+from pygame import camera
+import CONFIG
 
 class Game(object):
 
@@ -21,6 +23,7 @@ class Game(object):
         self.delta_time = 0
         self.overlay = Overlay(self.player)
         self.enemy = FireElemental((100, 100), 1, 10)
+        self.camera = pg.camera
 
         self.generic = NPC((200, 200))
 
@@ -74,6 +77,7 @@ class Game(object):
             self.draw()
             pg.display.update()
             self.delta_time = self.clock.tick(self.fps)
+
 
 if __name__ == "__main__":
     pg.init()

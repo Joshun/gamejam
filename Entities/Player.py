@@ -9,7 +9,7 @@ class Player(Character):
 
         self.frames_down = []
 
-        self.image = pygame.Surface((20, 26))
+        self.image = pygame.Surface((19, 26))
         self.rect = self.image.get_rect(topleft=start_pos)
         self.load_images()
 
@@ -35,6 +35,8 @@ class Player(Character):
             self.rect.y += self.speed
 
     def update(self, keys, delta):
+        self.check_pos()
+
         self.time_elapsed += delta
 
         if self.time_elapsed > self.anim_speed:

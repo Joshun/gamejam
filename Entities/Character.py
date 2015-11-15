@@ -1,6 +1,7 @@
 import pygame
 from SpriteSheet import SpriteSheet
 from abc import abstractmethod, ABCMeta
+from CONFIG import *
 
 
 # Abstract class for players
@@ -35,6 +36,10 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
     @abstractmethod
     def draw(self, surface):
         pass
+
+    def check_pos(self):
+        if self.rect.y < TOP_CAP:
+            self.rect.y = TOP_CAP
 
     def is_colliding(self, rect):
         pos_x, pos_y = self.get_centre()

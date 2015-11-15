@@ -21,7 +21,7 @@ class NPC(Character):
 
         for i in range(12):
             y = i*self.rect.h
-            self.frames_down.append(self.sprite_sheet.get_image(0, y, self.rect.w, self.rect.h))
+            self.frames_down.append(self.sprite_sheet.get_image(60, y, self.rect.w, self.rect.h))
 
     def update(self, delta):
         self.time_elapsed += delta

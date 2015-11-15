@@ -12,7 +12,7 @@ class FireElemental(Enemy):
 
         self.frames_down = []
 
-        self.image = pygame.Surface((20, 26))
+        self.image = pygame.Surface((19, 26))
         self.rect = self.image.get_rect(topleft=start_pos)
         self.load_images()
 
@@ -24,10 +24,8 @@ class FireElemental(Enemy):
         y_offset = 1
 
         for i in range(4):
-            x = i*(x_offset + self.rect.w)
+            x = i*self.rect.w
             self.frames_down.append(self.sprite_sheet.get_image(x, y_offset, self.rect.w, self.rect.h))
-
-
 
     def update(self, delta, player):
         self.time_elapsed += delta
