@@ -40,8 +40,8 @@ class RoomCollection(object):
     def draw_current(self, screen):
         self.__current_room.draw(screen)
 
-    def update_current(self, screen, player):
-        self.__current_room.update(screen, player)
+    def update_current(self, player, delta_time):
+        self.__current_room.update(player, delta_time)
 
     def get_current(self):
         return self.__current_room

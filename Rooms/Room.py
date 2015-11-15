@@ -4,6 +4,7 @@ import pygame as pg
 
 from Rooms.Door import *
 
+from Loaders.CharacterLoader import *
 
 class Room(object):
     """Base class for a Room"""
@@ -16,9 +17,9 @@ class Room(object):
         self.__tiled_map = tiled_map
         self.__room_collection = []
         self.__tiled_map_objects = self.__tiled_map.get_objects()
-        self.__character_tiles = self.__tiled_map.get_all_objects_with_property("character")
         self.__entry_point = self.__init_entry_point()
         self.__doors = self.__setup_doors(self.__tiled_map.get_all_objects_with_property("next_room"))
+        self.__characters = self.__setup_characters(self.__tiled_map.get_all_objects_with_property("character"))
 
         self.__overlay = overlay
 
@@ -47,6 +48,9 @@ class Room(object):
     def get_entry_point(self):
         return self.__entry_point
 
+    def __setup_characters(self, characters_list):
+        return CharacterLoader(characters_list).get_characters()
+
 
     def __setup_doors(self, doors_list):
         doors = []
@@ -59,7 +63,14 @@ class Room(object):
 
     def draw(self, screen):
         self.__tiled_map.draw(screen)
+        for obj in self.__characters:
+            obj.draw(screen)
 
-    def update(self, screen, player):
+    def update(self, player, delta_time):
         for obj in self.__doors:
             obj.player_action(player, self.__room_collection)
+        print(self.__characters)
+        for obj in self.__characters:
+            print(delta_time)
+            print(obj.update(delta_time, player))
+            # print("Trying to update character", obj)

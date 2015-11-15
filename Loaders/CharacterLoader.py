@@ -1,34 +1,37 @@
-from Entities import FireElemental, NPC
+from Entities.FireElemental import *
+from Entities.Character import *
+from Entities.NPC import *
 
 from Steve import AwfulErrorHandling
 
 class CharacterLoader:
 
-    def __create_enemy(self, pos, speed, enemy_type):
+    def __create_enemy(self, pos, speed, enemy_type, health):
         if enemy_type == "fire_elemental":
-            return FireElemental
+            return FireElemental(pos, speed, health)
         else:
             AwfulErrorHandling.throw_error("Invalid enemy", enemy_type)
 
     def __init__(self, character_tiles):
-        characters = []
+        self.__characters = []
         for character_obj in character_tiles:
             x = character_obj.x
             y = character_obj.y
             pos = (x,y)
             properties = character_obj.properties
-            speed = properties["speed"]
+            speed = int(properties["speed"])
             character_type = properties["character"]
+            health = int(properties["health"])
 
             if character_type == "enemy":
-                characters.append(self.__create_enemy(pos, speed, properties["enemy_type"]))
+                self.__characters.append(self.__create_enemy(pos, speed, properties["enemy_type"], health))
             elif character_type == "npc":
-                characters.append(NPC(pos))
+                self.__characters.append(NPC(pos))
             else:
                 AwfulErrorHandling.throw_error("Invalid character type", character_type)
 
-        return characters
-
+    def get_characters(self):
+        return self.__characters
 
 
 

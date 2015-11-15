@@ -1,10 +1,9 @@
-from Entities.FireElemental import FireElemental
 from Entities.Player import Player
 from Overlays.Overlay import Overlay
 from Rooms.RoomCollection import *
 from Entities.NPC import NPC
-from pygame import camera
 import CONFIG
+from Entities.FireElemental import FireElemental
 
 class Game(object):
 
@@ -23,7 +22,6 @@ class Game(object):
         self.delta_time = 0
         self.overlay = Overlay(self.player)
         self.enemy = FireElemental((100, 100), 1, 10)
-        self.camera = pg.camera
 
         self.generic = NPC((200, 200))
 
@@ -54,8 +52,8 @@ class Game(object):
         self.generic.update(self.delta_time)
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
-        self.room_collection.update_current(self.screen, self.player)
-        self.enemy.weapon.shoot(self.enemy.rect.centerx, self.enemy.rect.centery, "right")
+
+        self.room_collection.update_current(self.player, self.delta_time)
 
     def draw(self):
         """
