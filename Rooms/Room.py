@@ -73,12 +73,13 @@ class Room(object):
             obj.draw(screen)
 
     def update(self, player, delta_time):
-
         for door in self.__doors:
             door.player_action(player, self.__room_collection)
-        print(self.__characters)
         for character in self.__characters:
-            print(character.update(delta_time, player))
-            # print("Trying to update character", obj)
+            character.update(delta_time, player)
         for wall in self.__walls:
-            pass
+            wall_rect = wall.get_rect()
+            print((wall_rect, player.rect))
+            if player.is_colliding(wall_rect):
+                sys.exit(1)
+                player.collision_fix(wall_rect)
