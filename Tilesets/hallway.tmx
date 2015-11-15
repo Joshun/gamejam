@@ -273,7 +273,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="67"/>
+   <tile gid="65"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -288,7 +288,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="67"/>
+   <tile gid="131"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -303,7 +303,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="67"/>
+   <tile gid="65"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -318,14 +318,14 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="65"/>
+   <tile gid="100"/>
+   <tile gid="100"/>
+   <tile gid="100"/>
+   <tile gid="100"/>
+   <tile gid="100"/>
+   <tile gid="100"/>
+   <tile gid="100"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -696,8 +696,8 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="entry and exits">
-  <object id="1" x="192" y="80" width="16" height="16">
+ <objectgroup name="entry and exits" width="0" height="0">
+  <object x="192" y="80" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
    </properties>
@@ -707,13 +707,13 @@
     <property name="next_room" value="the_bathroom"/>
    </properties>
   </object>
-  <object id="11" x="61" y="48" width="16" height="16">
+  <object x="61" y="48" width="16" height="16">
    <properties>
     <property name="next_room" value="the_bathroom"/>
    </properties>
   </object>
-  <object id="12" x="-139" y="46" height="2"/>
-  <object id="13" x="192" y="208" width="16" height="16">
+  <object x="-139" y="46" height="2"/>
+  <object x="192" y="208" width="16" height="16">
    <properties>
     <property name="next_room" value="start"/>
    </properties>
@@ -736,12 +736,12 @@
    </properties>
   </object>
   <object x="159" y="78" width="17" height="162"/>
-  <object x="52" y="75" width="124" height="18">
+  <object x="57" y="70" width="119" height="26">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object x="172" y="235" width="55" height="6">
+  <object x="172" y="235" width="55" height="26">
    <properties>
     <property name="wall" value=""/>
    </properties>

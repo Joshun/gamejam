@@ -353,7 +353,7 @@
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object x="11" y="157" width="137" height="5"/>
+  <object x="13" y="144" width="135" height="16"/>
   <object x="114" y="2" width="46" height="31">
    <properties>
     <property name="wall" value=""/>
@@ -473,7 +473,7 @@
   </data>
  </layer>
  <objectgroup name="enemies" width="0" height="0">
-  <object x="112" y="128" width="16" height="16">
+  <object x="107" y="119" width="16" height="16">
    <properties>
     <property name="character" value="enemy"/>
     <property name="direction" value="up"/>
@@ -487,16 +487,7 @@
     <property name="entry_point" value=""/>
    </properties>
   </object>
-  <object x="58" y="136" width="16" height="16">
-   <properties>
-    <property name="character" value="enemy"/>
-    <property name="direction" value="right"/>
-    <property name="enemy_type" value="fire_elemental"/>
-    <property name="health" value="50"/>
-    <property name="speed" value="2"/>
-   </properties>
-  </object>
-  <object x="58" y="136" width="16" height="16">
+  <object x="22" y="120" width="16" height="16">
    <properties>
     <property name="character" value="enemy"/>
     <property name="direction" value="up"/>
