@@ -21,8 +21,10 @@ class Game(object):
         self.delta_time = 0
         self.overlay = Overlay(self.player)
 
-        self.room_collection = RoomCollection("Rooms/RoomDescriptions.json", self.overlay)
-        self.room_collection.get_current().set_room_collection(self.room_collection)
+        self.room_collection = RoomCollection("Rooms/RoomDescriptions.json", self.overlay, self.player)
+        # self.room_collection.get_current().set_room_collection(self.room_collection)
+        self.room_collection.set_collection(self.room_collection)
+
 
         entry_point = self.room_collection.get_current().get_entry_point()
         self.player.move_to(entry_point.x, entry_point.y)

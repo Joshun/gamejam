@@ -11,7 +11,7 @@ from Loaders.CharacterLoader import *
 
 class Room(object):
     """Base class for a Room"""
-    def __init__(self, tiled_map, name, description, overlay, fixed=True):
+    def __init__(self, tiled_map, name, description, overlay, player, fixed=True):
         self.visited = False
         self.__fixed = fixed
         self.__name = name
@@ -24,11 +24,14 @@ class Room(object):
         self.__doors = self.__setup_doors(self.__tiled_map.get_all_objects_with_property("next_room"))
         self.__characters = self.__setup_characters(self.__tiled_map.get_all_objects_with_property("character"))
         self.__walls = self.__setup_walls(self.__tiled_map.get_all_objects_with_property("wall"))
-
         self.__overlay = overlay
+        self.__player = player
         print(self.__tiled_map.get_all_objects_with_property("entry_point"))
 
+
     def player_enter(self):
+        print("Player at entry point", self.__entry_point.x, self.__entry_point.y)
+        self.__player.move_to(self.__entry_point.x, self.__entry_point.y)
         if not self.visited:
             self.visited = True
             self.__overlay.update_scene_intro(self.__name, [self.__description])
@@ -61,11 +64,15 @@ class Room(object):
             doors.append(Door(obj.properties["next_room"], pg.Rect(obj.x, obj.y, obj.width, obj.height)))
         return doors
 
-    def __setup_walls(self, wall_list):
+    @staticmethod
+    def __setup_walls(wall_list):
         walls = []
         for obj in wall_list:
             wall_rect = pg.Rect(obj.x, obj.y, obj.width, obj.height)
-            walls.append(Wall(wall_rect))
+            if "walkable" in obj.properties:
+                walls.append(Wall(wall_rect, solid=False))
+            else:
+                walls.append(Wall(wall_rect))
         return walls
 
     def set_room_collection(self, room_collection):
@@ -85,6 +92,7 @@ class Room(object):
         player.test_for_collisions(self.__walls)
 
         for wall in self.__walls:
-            for character in self.__characters:
-                if wall.is_colliding(character.rect):
-                    character.process_collision()
+            if wall.is_solid():
+                for character in self.__characters:
+                    if wall.is_colliding(character.rect):
+                        character.process_collision()

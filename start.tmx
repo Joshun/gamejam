@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="21">
- <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16">
   <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
  </tileset>
  <layer name="base" width="40" height="30">
@@ -8,20 +8,29 @@
    eJztzjEOACAIADGI//+zi5MTG2ja5PbLiMhiHapv/t78u63TVNP/AAAA4Ecb3aUAOQ==
   </data>
  </layer>
- <objectgroup name="entry and exit points">
-  <object id="2" x="144" y="16" width="32" height="32">
+ <objectgroup name="entry and exit points" width="0" height="0">
+  <object x="144" y="16" width="32" height="32">
    <properties>
     <property name="next_room" value="room2"/>
    </properties>
   </object>
-  <object id="4" x="16" y="0" width="16" height="16">
+  <object x="16" y="0" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="characters">
-  <object id="6" x="128" y="0" width="16" height="16">
+ <objectgroup name="characters" width="0" height="0">
+  <object x="128" y="0" width="16" height="16">
+   <properties>
+    <property name="character" value="enemy"/>
+    <property name="direction" value="left"/>
+    <property name="enemy_type" value="fire_elemental"/>
+    <property name="health" value="100"/>
+    <property name="speed" value="2"/>
+   </properties>
+  </object>
+  <object x="144" y="48" width="16" height="16">
    <properties>
     <property name="character" value="enemy"/>
     <property name="enemy_type" value="fire_elemental"/>
@@ -29,15 +38,7 @@
     <property name="speed" value="2"/>
    </properties>
   </object>
-  <object id="14" x="144" y="48" width="16" height="16">
-   <properties>
-    <property name="character" value="enemy"/>
-    <property name="enemy_type" value="fire_elemental"/>
-    <property name="health" value="100"/>
-    <property name="speed" value="2"/>
-   </properties>
-  </object>
-  <object id="16" x="64" y="16" width="16" height="16">
+  <object x="64" y="16" width="16" height="16">
    <properties>
     <property name="character" value="enemy"/>
     <property name="enemy_type" value="fire_elemental"/>
@@ -46,8 +47,8 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="walls">
-  <object id="18" x="0" y="16" width="16" height="48">
+ <objectgroup name="walls" width="0" height="0">
+  <object x="0" y="16" width="16" height="48">
    <properties>
     <property name="wall" value=""/>
    </properties>
