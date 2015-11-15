@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="37">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" nextobjectid="25">
  <tileset firstgid="1" name="tilesheet" tilewidth="16" tileheight="16" tilecount="64">
   <image source="../graphics/objects/tiles/tilesheet.png" width="128" height="128"/>
  </tileset>
@@ -9,12 +9,12 @@
   </data>
  </layer>
  <objectgroup name="entry and exit points">
-  <object id="2" x="144" y="192" width="32" height="32">
+  <object id="2" x="144" y="16" width="32" height="32">
    <properties>
     <property name="next_room" value="room2"/>
    </properties>
   </object>
-  <object id="4" x="32" y="32" width="16" height="16">
+  <object id="4" x="16" y="0" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
    </properties>
@@ -45,22 +45,14 @@
     <property name="speed" value="100"/>
    </properties>
   </object>
-  <object id="34" x="176" y="16" height="48"/>
  </objectgroup>
  <objectgroup name="walls">
-  <object id="22" x="0" y="0" width="176" height="32">
+  <object id="22" x="0" y="48" width="176" height="16">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object id="26" x="0" y="0" width="32" height="64">
-   <properties>
-    <property name="wall" value=""/>
-   </properties>
-  </object>
-  <object id="32" x="0" y="80" width="176" height="32"/>
-  <object id="33" x="176" y="0" height="112"/>
-  <object id="35" x="144" y="16" width="32" height="96"/>
-  <object id="36" x="0" y="64" width="32" height="32"/>
+  <object id="23" x="144" y="128"/>
+  <object id="24" x="144" y="32"/>
  </objectgroup>
 </map>
