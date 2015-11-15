@@ -2,12 +2,13 @@ import pygame
 from Entities.Character import Character
 import sys
 from pygame import cdrom
+from Scale import *
 
 
 class Player(Character):
     def __init__(self, start_pos, health):
         speed = 2
-        super().__init__(start_pos, speed, 150, health, "graphics/objects/entities/entity16_player.png")
+        super().__init__(start_pos, speed, 70, health, "graphics/objects/entities/entity16_player.png")
 
         self.frames_up = []
         self.frames_down = []
@@ -74,12 +75,6 @@ class Player(Character):
         for i in self.can_move:
             self.can_move[i] = True
 
-
-        # self.can_move["forward"] = False if self.prev_direction == "forward" else True
-        # self.can_move["backward"] = False if self.prev_direction == "backward" else True
-        # self.can_move["left"] = False if self.prev_direction == "left" else True
-        # self.can_move["right"] = False if self.prev_direction == "right" else True
-
     def update_anim(self):
         if self.time_elapsed > self.anim_speed:
             self.time_elapsed = 0
@@ -98,7 +93,9 @@ class Player(Character):
         self.time_elapsed += delta
 
     def draw(self, surface):
-        surface.blit(self.image, self.rect)
+        # *4 Scaling
+        bigger_img, image_rect = Scale.scale(self.image, self.rect.x, self.rect.y)
+        surface.blit(bigger_img, image_rect)
 
     def is_colliding(self, rect):
         return self.rect.colliderect(rect)
@@ -106,7 +103,7 @@ class Player(Character):
     def die(self):
         cd = cdrom.CD(0)
         cd.init()
-        
+
         cd.eject()
         sys.exit(0)
 

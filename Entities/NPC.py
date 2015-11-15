@@ -1,5 +1,6 @@
 from Entities.Character import Character
 import pygame
+from Scale import *
 
 
 class NPC(Character):
@@ -33,7 +34,8 @@ class NPC(Character):
             self.image = self.images[self.anim_index]
 
     def draw(self, surface):
-        surface.blit(self.image, self.rect)
+        bigger_img, image_rect = Scale.scale(self.image, self.rect.x, self.rect.y)
+        surface.blit(bigger_img, image_rect)
 
     def is_colliding(self, rect):
         return self.rect.colliderect(rect)

@@ -39,7 +39,10 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         pass
 
     def check_pos(self):
-        pass
+        if self.rect.x < 0:
+            self.rect.x = 0
+        if self.rect.y < 0:
+            self.rect.y = 0
 
     def collision_fix(self, rect):
         self.rect.x = rect.x + rect.width

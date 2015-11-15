@@ -1,6 +1,7 @@
 import pygame as pg
 import pytmx
 from CONFIG import *
+from Scale import *
 
 
 class TilesetLoader(object):
@@ -32,8 +33,8 @@ class TilesetLoader(object):
         for layer in self.__tiled_map.visible_layers:
             if isinstance(layer, pytmx.pytmx.TiledTileLayer):
                 for x, y, image in layer.tiles():
-                    image_width = image.get_width()
-                    image_height = image.get_height()
-                    image_rect = pg.Rect(x*image_width, y*image_height, image_width, image_height)
+                    # *4 Scaling
+                    size = image.get_size()
+                    bigger_img, image_rect = Scale.scale(image, x*size[0], y*size[0])
 
-                    screen.blit(image, image_rect)
+                    screen.blit(bigger_img, image_rect)

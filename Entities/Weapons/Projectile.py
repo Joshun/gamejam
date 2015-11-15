@@ -1,4 +1,5 @@
 import pygame
+from Scale import *
 
 
 class Projectile(pygame.sprite.Sprite):
@@ -13,4 +14,5 @@ class Projectile(pygame.sprite.Sprite):
         self.rect = self.sprite.get_rect(topleft=(x,y))
 
     def draw(self, surface):
-        surface.blit(self.sprite, self.rect)
+        bigger_img, image_rect = Scale.scale(self.sprite, self.rect.x, self.rect.y)
+        surface.blit(bigger_img, image_rect)

@@ -1,6 +1,7 @@
 import pygame
 from Entities.Enemy import Enemy
 from Entities.Weapons.Firebolt import Firebolt
+from Scale import *
 
 
 class FireElemental(Enemy):
@@ -40,5 +41,8 @@ class FireElemental(Enemy):
             self.image = self.images[self.anim_index]
 
     def draw(self, surface):
-        surface.blit(self.image, self.rect)
+        # *4 Scaling
+        bigger_img, image_rect = Scale.scale(self.image, self.rect.x, self.rect.y)
+
+        surface.blit(bigger_img, image_rect)
         self.weapon.draw(surface)
