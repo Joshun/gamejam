@@ -29,6 +29,10 @@ class Game(object):
         entry_point = self.room_collection.get_current().get_entry_point()
         self.player.move_to(entry_point.x, entry_point.y)
 
+        for arg in sys.argv:
+            if arg == "-sfx":
+                self.player.enable_sfx()
+
     def update_viewport(self):
         """
         The viewport will stay centered on the player unless the player
@@ -44,6 +48,8 @@ class Game(object):
         for event in pg.event.get():
             if event.type == pg.QUIT or self.keys[pg.K_ESCAPE]:
                 self.done = True
+
+
 
     def update(self):
         """Update the player and current viewport."""
@@ -67,7 +73,15 @@ class Game(object):
         self.overlay.draw(self.screen)
 
     def main_loop(self):
+        t = 0
+        last_t = 0
+        t_diff = 400
         while not self.done:
+            if (t - last_t) > t_diff:
+                last_t = t
+                self.player.mixer_free()
+            t += self.delta_time
+
             self.event_loop()
             self.update()
             self.draw()

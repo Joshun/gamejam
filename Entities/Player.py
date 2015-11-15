@@ -18,6 +18,7 @@ class Player(Character):
         self.image = pygame.Surface((16, 20))
         self.rect = self.image.get_rect(topleft=start_pos)
         self.load_images()
+        self.sfx = self.load_sfx()
 
         self.anim_index = 0
         self.images = self.frames_down
@@ -26,6 +27,29 @@ class Player(Character):
         self.can_move = {"left": True, "right": True, "up": True, "down": True}
         self.prev_direction = ""
         self.current_direction = ""
+        self.__mixer_free = True
+        self.__sfx_enabled = False
+
+    @staticmethod
+    def load_sfx():
+        sfx = {
+            "walk": "sfx/walk.wav",
+            "talk": "sfx/talk.wav"
+        }
+        return sfx
+
+    def enable_sfx(self):
+        self.__sfx_enabled = True
+    def play_sfx(self, key):
+        if not self.__sfx_enabled:
+            return
+        if key == "sfx/talk.wav" or self.__mixer_free:
+            pygame.mixer.music.load(self.sfx[key])
+            pygame.mixer.music.play(0)
+            self.__mixer_free = False
+
+    def mixer_free(self):
+        self.__mixer_free = True
 
     def load_images(self):
         x_offset = 16
@@ -43,6 +67,7 @@ class Player(Character):
 
     def check_keys(self, keys):
         self.prev_direction = self.current_direction
+        sound = True
         if keys[pygame.K_a] and self.can_move["left"]:
             self.rect.x -= self.speed
             self.images = self.frames_left
@@ -65,6 +90,9 @@ class Player(Character):
             self.current_direction = "down"
         else:
             self.image = self.images[0]
+            sound = False
+        if sound:
+            self.play_sfx("walk")
 
     # def set_movement_blocking(self):
     #     for i in self.can_move:
