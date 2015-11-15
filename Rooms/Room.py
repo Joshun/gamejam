@@ -9,7 +9,6 @@ from Loaders.CharacterLoader import *
 class Room(object):
     """Base class for a Room"""
     def __init__(self, tiled_map, name, description, overlay):
-        print("hello")
         self.visited = False
         self.__name = name
         self.__description = description
@@ -23,11 +22,7 @@ class Room(object):
 
         self.__overlay = overlay
 
-        print("description:", self.__description, "name:", self.__name)
-
         # self.__doors = self.__setup_doors(self.__tiled_map.get_all_tiles_with_property("next_room"))
-
-        print(self.__doors)
 
     def player_enter(self):
         if not self.visited:
@@ -42,7 +37,6 @@ class Room(object):
             sys.exit(1)
         else:
             entry_point = entry_point_test[0]
-            print("Setting player entry point to", entry_point.x, entry_point.y)
             return entry_point
 
     def get_entry_point(self):
@@ -50,7 +44,6 @@ class Room(object):
 
     def __setup_characters(self, characters_list):
         return CharacterLoader(characters_list).get_characters()
-
 
     def __setup_doors(self, doors_list):
         doors = []
@@ -69,8 +62,6 @@ class Room(object):
     def update(self, player, delta_time):
         for obj in self.__doors:
             obj.player_action(player, self.__room_collection)
-        print(self.__characters)
         for obj in self.__characters:
-            print(delta_time)
-            print(obj.update(delta_time, player))
+            obj.update(delta_time, player)
             # print("Trying to update character", obj)

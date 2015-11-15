@@ -1,5 +1,4 @@
 from Entities.Character import Character
-from SpriteSheet import SpriteSheet
 import pygame
 
 

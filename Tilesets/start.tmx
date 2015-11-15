@@ -26,23 +26,7 @@
     <property name="character" value="enemy"/>
     <property name="enemy_type" value="fire_elemental"/>
     <property name="health" value="100"/>
-    <property name="speed" value="2"/>
-   </properties>
-  </object>
-  <object id="14" x="144" y="48" width="16" height="16">
-   <properties>
-    <property name="character" value="enemy"/>
-    <property name="enemy_type" value="fire_elemental"/>
-    <property name="health" value="100"/>
-    <property name="speed" value="2"/>
-   </properties>
-  </object>
-  <object id="16" x="64" y="16" width="16" height="16">
-   <properties>
-    <property name="character" value="enemy"/>
-    <property name="enemy_type" value="fire_elemental"/>
-    <property name="health" value="50"/>
-    <property name="speed" value="100"/>
+    <property name="speed" value="1"/>
    </properties>
   </object>
  </objectgroup>

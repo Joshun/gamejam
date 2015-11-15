@@ -1,8 +1,8 @@
 from Entities.FireElemental import *
-from Entities.Character import *
 from Entities.NPC import *
 
 from Steve import AwfulErrorHandling
+
 
 class CharacterLoader:
 

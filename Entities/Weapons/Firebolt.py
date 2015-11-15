@@ -5,7 +5,7 @@ from Entities.Weapons.Projectile import Projectile
 
 class Firebolt(RangedWeapon):
     def __init__(self):
-        self.range = 64
+        self.range = 32
         self.damage = 20
         self.speed = 8
         self.bullet_sprite = pygame.Surface((16, 16))
