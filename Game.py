@@ -47,7 +47,7 @@ class Game(object):
         """Update the player and current viewport."""
         self.keys = pg.key.get_pressed()
         if self.keys[pygame.K_h]:
-            self.player.hit(100)
+            self.player.hit(10)
         self.update_viewport()
         self.player.update(self.keys, self.delta_time)
         self.overlay.update(self.keys)
