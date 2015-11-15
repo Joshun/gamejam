@@ -11,7 +11,7 @@
         "room_name": "The Bathroom",
         "description": "This used to be a place to relax. Now there are only fragments.",
         "tile_map": "Tilesets/bathroom.tmx",
-        "room_type": "fixed",
+        "room_type": "scrollable",
         "enter_music": ""
     },
 
