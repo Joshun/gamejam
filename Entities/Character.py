@@ -41,6 +41,10 @@ class Character(pygame.sprite.Sprite, metaclass=ABCMeta):
         if self.rect.y < TOP_CAP:
             self.rect.y = TOP_CAP
 
+    def collision_fix(self, rect):
+        self.rect.x = rect.x + rect.width
+        self.rect.y = rect.y + rect.height
+
     def is_colliding(self, rect):
         pos_x, pos_y = self.get_centre()
         if pos_x - 8 <= rect.x <= pos_x + 8:
