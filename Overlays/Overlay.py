@@ -11,9 +11,11 @@ class Overlay():
         self.hud_overlay = HudOverlay(player)
         self.inventory = Inventory()
         self.inventory_visible = False
+        self.scene_intro_visible = True
 
     def update_scene_intro(self, location, lines):
         self.scene_intro = SceneIntro(location, lines)
+        self.scene_intro_visible = True
 
     def draw(self, screen):
         self.hud_overlay.draw(screen)
@@ -35,8 +37,8 @@ class Overlay():
                 self.inventory.close()
                 self.inventory_visible = False
 
-        if self.scene_intro:
+        if self.scene_intro_visible:
             if keys[pygame.K_SPACE]:
                 self.scene_intro.next()
                 if self.scene_intro.closed:
-                    self.scene_intro = None
+                    self.scene_intro_visible = False

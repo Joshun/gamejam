@@ -6,12 +6,12 @@ class HudOverlay:
     def __init__(self, player):
         self.player = player
         self.heart_size = (20, 20)
-
         self.img = pygame.image.load('graphics/objects/entities/life_heart.png')
 
     def draw(self, screen):
         background = self.draw_background((screen.get_size()[0], 20), screen)
         self.draw_hearts(background, self.player.health // 20)
+
         screen.blit(background, (0, screen.get_size()[1]-20))
 
     def update(self):
