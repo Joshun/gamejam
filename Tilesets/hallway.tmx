@@ -707,6 +707,12 @@
     <property name="next_room" value="the_bathroom"/>
    </properties>
   </object>
+  <object x="61" y="48" width="16" height="16">
+   <properties>
+    <property name="next_room" value="the_bathroom"/>
+   </properties>
+  </object>
+  <object x="-139" y="46" height="2"/>
  </objectgroup>
  <objectgroup name="collideables">
   <object id="3" x="48" y="0" width="17" height="82">

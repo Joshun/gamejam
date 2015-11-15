@@ -37,7 +37,14 @@ class Firebolt(RangedWeapon):
         :return:
         """
 
-        self.bullet.x += self.bullet.speed
+        if self.direction is "right":
+            self.bullet.x += self.bullet.speed
+        elif self.direction is "left":
+            self.bullet.x -= self.bullet.speed
+        elif self.direction is "top":
+            self.bullet.y += self.bullet.speed
+        else:
+            self.bullet.y -= self.bullet.speed
         # if self.__update_delta(delta_time):
         #     self.bullet.x += self.bullet.speed
         #     print(self.bullet.x)

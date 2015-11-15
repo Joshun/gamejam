@@ -6,9 +6,9 @@ from Steve import AwfulErrorHandling
 
 class CharacterLoader:
 
-    def __create_enemy(self, pos, speed, enemy_type, health):
+    def __create_enemy(self, pos, speed, enemy_type, health, direction):
         if enemy_type == "fire_elemental":
-            return FireElemental(pos, speed, health)
+            return FireElemental(pos, speed, health, direction)
         else:
             AwfulErrorHandling.throw_error("Invalid enemy", enemy_type)
 
@@ -19,13 +19,14 @@ class CharacterLoader:
             y = character_obj.y
             pos = (x,y)
             properties = character_obj.properties
+            print(properties)
             speed = int(properties["speed"])
             character_type = properties["character"]
             health = int(properties["health"])
             direction = properties["direction"]
 
             if character_type == "enemy":
-                self.__characters.append(self.__create_enemy(pos, speed, properties["enemy_type"], health))
+                self.__characters.append(self.__create_enemy(pos, speed, properties["enemy_type"], health, direction))
             elif character_type == "npc":
                 self.__characters.append(NPC(pos))
             else:
@@ -33,7 +34,3 @@ class CharacterLoader:
 
     def get_characters(self):
         return self.__characters
-
-
-
-

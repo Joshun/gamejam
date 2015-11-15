@@ -484,6 +484,24 @@
   <object id="15" x="80" y="80" width="16" height="16">
    <properties>
     <property name="entry_point" value=""/>
+</properties>
+  </object>
+  <object x="58" y="136" width="16" height="16">
+   <properties>
+    <property name="character" value="enemy"/>
+    <property name="direction" value="right"/>
+    <property name="enemy_type" value="fire_elemental"/>
+    <property name="health" value="50"/>
+    <property name="speed" value="2"/>
+   </properties>
+  </object>
+  <object x="58" y="136" width="16" height="16">
+   <properties>
+    <property name="character" value="enemy"/>
+    <property name="direction" value="right"/>
+    <property name="enemy_type" value="fire_elemental"/>
+    <property name="health" value="50"/>
+    <property name="speed" value="2"/>
    </properties>
   </object>
  </objectgroup>

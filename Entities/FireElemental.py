@@ -5,9 +5,9 @@ from Scale import *
 
 
 class FireElemental(Enemy):
-    def __init__(self, start_pos, move_speed, health):
+    def __init__(self, start_pos, move_speed, health, direction):
         anim_speed = 150
-        weapon = Firebolt(start_pos[0],start_pos[1],"right")
+        weapon = Firebolt(start_pos[0], start_pos[1], direction)
         super().__init__(start_pos, move_speed, anim_speed, health, weapon,
                          "graphics/sprites/entities/entity16_fire.png")
 
@@ -30,8 +30,8 @@ class FireElemental(Enemy):
 
     def update(self, delta, player):
         self.time_elapsed += delta
-
         self.update_pos(player, delta)
+        self.weapon.shoot(delta)
 
         if self.time_elapsed > self.anim_speed:
             self.time_elapsed = 0
