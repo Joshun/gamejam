@@ -321,8 +321,8 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="collideables" width="10" height="10" visible="0">
-  <object x="2" y="1" width="159" height="31">
+ <objectgroup name="collideables" width="10" height="10">
+  <object x="2" y="1" width="94" height="32">
    <properties>
     <property name="wall" value=""/>
    </properties>
@@ -343,17 +343,18 @@
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object x="125" y="18" width="22" height="28">
+  <object x="126" y="34" width="22" height="28">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object x="128" y="68" width="19" height="26">
+  <object x="127" y="75" width="23" height="31">
    <properties>
     <property name="wall" value=""/>
    </properties>
   </object>
-  <object x="128" y="105" width="23" height="20">
+  <object x="11" y="157" width="137" height="5"/>
+  <object x="114" y="2" width="46" height="31">
    <properties>
     <property name="wall" value=""/>
    </properties>
@@ -471,4 +472,14 @@
    <tile gid="0"/>
   </data>
  </layer>
+ <objectgroup name="enemies" width="10" height="10">
+  <object x="58" y="136" width="16" height="16">
+   <properties>
+    <property name="character" value="enemy"/>
+    <property name="enemy_type" value="fire_elemental"/>
+    <property name="health" value="50"/>
+    <property name="speed" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
