@@ -1,5 +1,6 @@
 import pygame
 from Entities.Weapons.RangedWeapon import RangedWeapon
+from Entities.Weapons.Projectile import Projectile
 
 
 class Firebolt(RangedWeapon):
@@ -7,26 +8,35 @@ class Firebolt(RangedWeapon):
         self.range = 64
         self.damage = 20
         self.speed = 8
-        self.bullet_sprite = pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert()
+        self.bullet_sprite = pygame.Surface((16, 16))
+        # self.bullet_sprite = pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert()
         super().__init__(self.range, self.damage, self.speed)
 
-    def shoot(self, x, y, direction, damage, sprite, range):
+    def shoot(self,x,y, direction):
         """
         :param x: x position of the shooter
         :param y: y position of the shooter
-        :param direction: direction the projectile is being shot in (0: up, 1: right, 2: down, 3: left)
+        :param direction: direction the projectile is being shot in
         :param damage: damage the weapon does
         :param sprite: image for the projectile
         :param range: range of the weapon
         :return:
         """
-        bullet = Projectile(x, y, self.speed, direction, self.weapon_damage, self.bullet_sprite, self.weapon_range)
-
-        # if direction == 0:
-        #     while(y <= bullet.range):
-        #         y += bullet.speed
-        # elif direction == 1:
-        #     while(x <= bullet.range):
-        #         x += bullet.speed
-        # elif direction == 2:
-        #     while(y )
+        bullet = Projectile(x,y, self.speed, direction, self.weapon_damage, pygame.image.load("graphics/sprites/entities/entity16_fireball.png").convert(), self.weapon_range)
+        bullet.draw(self.bullet_sprite)
+        if direction == "top":
+            while y <= bullet.range:
+                y += bullet.speed
+                # print("x: %d, y: %d" % x,y)
+        elif direction == "right":
+            while x <= bullet.range:
+                x += bullet.speed
+                # print("x: %d, y: %d" % x,y)
+        elif direction == "bottom":
+            while y >= bullet.range:
+                y -= bullet.speed
+                # print("x: %d, y: %d" % x,y)
+        else:
+            while x >= bullet.range:
+                x -= bullet.speed
+                # print("x: %d, y: %d" % x,y)

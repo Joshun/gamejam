@@ -47,10 +47,10 @@ class Game(object):
         self.keys = pg.key.get_pressed()
         self.update_viewport()
         self.player.update(self.keys, self.delta_time)
-
         self.enemy.update(self.delta_time, self.player)
         self.overlay.update(self.keys)
         self.room_collection.update_current(self.screen, self.player)
+        self.enemy.weapon.shoot(self.enemy.rect.centerx, self.enemy.rect.centery,"right")
 
     def draw(self):
         """
